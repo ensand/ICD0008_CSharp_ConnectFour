@@ -1,0 +1,11 @@
+C:\Users\Enola\RiderProjects\ConnectFour\ConsoleUI\bin\Debug\netcoreapp3.0\ConsoleUI.deps.json
+C:\Users\Enola\RiderProjects\ConnectFour\ConsoleUI\bin\Debug\netcoreapp3.0\ConsoleUI.dll
+C:\Users\Enola\RiderProjects\ConnectFour\ConsoleUI\bin\Debug\netcoreapp3.0\ConsoleUI.pdb
+C:\Users\Enola\RiderProjects\ConnectFour\ConsoleUI\bin\Debug\netcoreapp3.0\GameEngine.dll
+C:\Users\Enola\RiderProjects\ConnectFour\ConsoleUI\bin\Debug\netcoreapp3.0\GameEngine.pdb
+C:\Users\Enola\RiderProjects\ConnectFour\ConsoleUI\obj\Debug\netcoreapp3.0\ConsoleUI.csprojAssemblyReference.cache
+C:\Users\Enola\RiderProjects\ConnectFour\ConsoleUI\obj\Debug\netcoreapp3.0\ConsoleUI.AssemblyInfoInputs.cache
+C:\Users\Enola\RiderProjects\ConnectFour\ConsoleUI\obj\Debug\netcoreapp3.0\ConsoleUI.AssemblyInfo.cs
+C:\Users\Enola\RiderProjects\ConnectFour\ConsoleUI\obj\Debug\netcoreapp3.0\ConsoleUI.csproj.CopyComplete
+C:\Users\Enola\RiderProjects\ConnectFour\ConsoleUI\obj\Debug\netcoreapp3.0\ConsoleUI.dll
+C:\Users\Enola\RiderProjects\ConnectFour\ConsoleUI\obj\Debug\netcoreapp3.0\ConsoleUI.pdb

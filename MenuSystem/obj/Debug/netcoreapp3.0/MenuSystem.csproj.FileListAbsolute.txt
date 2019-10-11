@@ -1,0 +1,8 @@
+C:\Users\Enola\RiderProjects\ConnectFour\MenuSystem\bin\Debug\netcoreapp3.0\MenuSystem.deps.json
+C:\Users\Enola\RiderProjects\ConnectFour\MenuSystem\bin\Debug\netcoreapp3.0\MenuSystem.dll
+C:\Users\Enola\RiderProjects\ConnectFour\MenuSystem\bin\Debug\netcoreapp3.0\MenuSystem.pdb
+C:\Users\Enola\RiderProjects\ConnectFour\MenuSystem\obj\Debug\netcoreapp3.0\MenuSystem.csprojAssemblyReference.cache
+C:\Users\Enola\RiderProjects\ConnectFour\MenuSystem\obj\Debug\netcoreapp3.0\MenuSystem.AssemblyInfoInputs.cache
+C:\Users\Enola\RiderProjects\ConnectFour\MenuSystem\obj\Debug\netcoreapp3.0\MenuSystem.AssemblyInfo.cs
+C:\Users\Enola\RiderProjects\ConnectFour\MenuSystem\obj\Debug\netcoreapp3.0\MenuSystem.dll
+C:\Users\Enola\RiderProjects\ConnectFour\MenuSystem\obj\Debug\netcoreapp3.0\MenuSystem.pdb
