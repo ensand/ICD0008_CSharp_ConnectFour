@@ -8,76 +8,82 @@ namespace ConsoleApplication
 {
     class Program
     {
-        private static int BoardHeight { get; set; } = 4;
-        private static int BoardWidth { get; set; } = 4;
-        private static string PlayerOneColor { get; set; } = "Blue";
-        private static string PlayerTwoColor { get; set; } = "Red";
-        private static int ArrayStart { get; set; } = 0;
-        
+        private static GameSettings _settings;
+
         static void Main(string[] args)
         {
             Console.Clear();
-            
-            var boardSizesMenu = new Menu(2)
+
+            _settings = GameConfigHandler.LoadConfig();
+
+            var difficultyMenu = new Menu(2)
             {
-                Title = "Options", 
-                MenuItems = new List<MenuItem>()
+                Title = "Select difficulty",
+                MenuItemsDictionary = new Dictionary<string, MenuItem>()
                 {
-                    new MenuItem
                     {
-                        Command = "1", 
-                        Title = "Change board height",
-                        commandToExecute = ChangeBoardHeight
+                        "1", new MenuItem
+                        {
+                            Title = "Easy",
+                            commandToExecute = TestGame
+                        }
                     },
-                    new MenuItem
                     {
-                        Command = "2", 
-                        Title = "Change board width",
-                        commandToExecute = ChangeBoardWidth
+                        "2", new MenuItem
+                        {
+                            Title = "Moderate",
+                            commandToExecute = TestGame
+                        }
+                    },
+                    {
+                        "3", new MenuItem
+                        {
+                            Title = "Hard",
+                            commandToExecute = TestGame
+                        }
+                    },
+                    {
+                        "4", new MenuItem
+                        {
+                            Title = "Extreme",
+                            commandToExecute = TestGame
+                        }
+                    },
+                    {
+                        "5", new MenuItem
+                        {
+                            Title = "Impossible",
+                            commandToExecute = TestGame
+                        }
+                    },
+                    {
+                        "666", new MenuItem
+                        {
+                            Title = "Even Satan would not use this in Hell",
+                            commandToExecute = TestGame
+                        }
                     }
                 }
             };
             
-            var difficultyMenu = new Menu(2)
+            var boardSizesMenu = new Menu(1)
             {
-                Title = "Select difficulty",
-                MenuItems = new List<MenuItem>()
+                Title = "Options", 
+                MenuItemsDictionary = new Dictionary<string, MenuItem>()
                 {
-                    new MenuItem
                     {
-                        Command = "1", 
-                        Title = "Easy",
-                        commandToExecute = TestGame
+                        "1", new MenuItem
+                        {
+                            Title = "Change board height",
+                            commandToExecute = ChangeBoardHeight
+                        }
                     },
-                    new MenuItem
                     {
-                        Command = "2", 
-                        Title = "Moderate",
-                        commandToExecute = TestGame
-                    },
-                    new MenuItem
-                    {
-                        Command = "3", 
-                        Title = "Hard",
-                        commandToExecute = TestGame
-                    },
-                    new MenuItem
-                    {
-                        Command = "4", 
-                        Title = "Extreme",
-                        commandToExecute = TestGame
-                    },
-                    new MenuItem
-                    {
-                        Command = "5", 
-                        Title = "Impossible",
-                        commandToExecute = TestGame
-                    },
-                    new MenuItem
-                    {
-                        Command = "666", 
-                        Title = "Even Satan would not use this in Hell",
-                        commandToExecute = TestGame
+                        "2", new MenuItem
+                        {
+                            Title = "Change board width",
+                            commandToExecute = ChangeBoardWidth
+                        }
                     }
                 }
             };
@@ -85,51 +91,28 @@ namespace ConsoleApplication
             var gameMenu = new Menu(1)
             {
                 Title = "Start a new game of Connect 4", 
-                MenuItems = new List<MenuItem>()
+                MenuItemsDictionary = new Dictionary<string, MenuItem>()
                 {
-                    new MenuItem
                     {
-                        Command = "1", 
-                        Title = "Computer starts",
-                        commandToExecute = difficultyMenu.Run
+                        "1", new MenuItem
+                        {
+                            Title = "Computer starts",
+                            commandToExecute = TestGame
+                        }
                     },
-                    new MenuItem
                     {
-                        Command = "2", 
-                        Title = "Human starts",
-                        commandToExecute = difficultyMenu.Run
+                        "2", new MenuItem
+                        {
+                            Title = "Human starts",
+                            commandToExecute = TestGame
+                        }
                     },
-                    new MenuItem
                     {
-                        Command = "3", 
-                        Title = "Human against human",
-                        commandToExecute = TestGame
-                    }
-                }
-            };
-            
-            var optionsMenu = new Menu(1)
-            {
-                Title = "Options", 
-                MenuItems = new List<MenuItem>()
-                {
-                    new MenuItem
-                    {
-                        Command = "1", 
-                        Title = "Change board size",
-                        commandToExecute = boardSizesMenu.Run
-                    },
-                    new MenuItem
-                    {
-                        Command = "2", 
-                        Title = "Change players' colours",
-                        commandToExecute = null
-                    },
-                    new MenuItem
-                    {
-                        Command = "3", 
-                        Title = "Change array start number",
-                        commandToExecute = null
+                        "3", new MenuItem
+                        {
+                            Title = "Human against human",
+                            commandToExecute = TestGame
+                        }
                     }
                 }
             };
@@ -137,35 +120,43 @@ namespace ConsoleApplication
             var mainMenu = new Menu(0)
             {
                 Title = "Connect Four", 
-                MenuItems = new List<MenuItem>()
+                MenuItemsDictionary = new Dictionary<string, MenuItem>()
                 {
-                    new MenuItem
                     {
-                        Command = "S", 
-                        Title = "Start game",
-                        commandToExecute = gameMenu.Run
+                        "S", new MenuItem
+                        {
+                            Title = "Start game",
+                            commandToExecute = gameMenu.Run
+                        }
                     },
-                    new MenuItem
                     {
-                        Command = "O", 
-                        Title = "Options",
-                        commandToExecute = optionsMenu.Run
+                        "L", new MenuItem
+                        {
+                            Title = "Load game",
+                            commandToExecute = null
+                        }
+                    },
+                    {
+                        "O", new MenuItem
+                        {
+                            Title = "Change board options",
+                            commandToExecute = boardSizesMenu.Run
+                        }
                     }
                 }
             };
 
-//            mainMenu.Run();
-            TestGame();
+            mainMenu.Run();
         }
 
-        static String ChangeBoardHeight()
+        static string ChangeBoardHeight()
         {
             var newValue = -1;
 
             do
             {
                 Console.Clear();
-                Console.WriteLine("Current height: " + BoardHeight);
+                Console.WriteLine("Current height: " + _settings.BoardHeight);
                 Console.WriteLine("Give me a new height or type c to cancel");
                 Console.Write("> ");
                 var input = Console.ReadLine();
@@ -179,11 +170,12 @@ namespace ConsoleApplication
                 
             } while (newValue < 0);
             
-            BoardHeight = newValue;
+            _settings.BoardHeight = newValue;
+            GameConfigHandler.SaveConfig(_settings);
             return "P";
         }
         
-        static String ChangeBoardWidth()
+        static string ChangeBoardWidth()
         {
             var newValue = -1;
 
@@ -191,7 +183,7 @@ namespace ConsoleApplication
             {
                 Console.Clear();
                 Console.WriteLine("Give me a new width or type c to cancel");
-                Console.WriteLine("Current width: " + BoardWidth);
+                Console.WriteLine("Current width: " + _settings.BoardWidth);
                 Console.Write("> ");
                 var input = Console.ReadLine();
                 if (input.ToLower().Equals("c"))
@@ -204,13 +196,14 @@ namespace ConsoleApplication
                 
             } while (newValue < 0);
             
-            BoardWidth = newValue;
+            _settings.BoardWidth = newValue;
+            GameConfigHandler.SaveConfig(_settings);
             return "P";
         }
 
         static string TestGame()
         {
-            var game = new Game(BoardHeight, BoardWidth);
+            var game = new Game(_settings);
             var done = false;
 
             do
@@ -233,7 +226,7 @@ namespace ConsoleApplication
                         continue;
                     }
                     
-                    if (game.BoardWidth <= userXInt)
+                    if (userXInt <= 0 || game.BoardWidth < userXInt)
                     {
                         Console.WriteLine($"Column {userXInt} does not exist.");
                         userXInt = -1;

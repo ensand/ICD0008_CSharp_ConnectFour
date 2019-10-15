@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Serialization;
 
 namespace GameEngine
 {
@@ -15,13 +16,13 @@ namespace GameEngine
 
         private bool _playerOneMove;
 
-        public Game(int height = 4, int width = 4)
+        public Game(GameSettings settings)
         {
-            if (height < 4 || width < 4)
+            if (settings.BoardHeight < 4 || settings.BoardWidth < 4)
                 throw new ArgumentException("Board size has to be at least 4x4.");
             
-            BoardHeight = height;
-            BoardWidth = width;
+            BoardHeight = settings.BoardHeight;
+            BoardWidth = settings.BoardWidth;
             Board = new CellState[BoardHeight, BoardWidth];
         }
         
@@ -50,8 +51,9 @@ namespace GameEngine
             return true;
         }
 
-        public void Move(int posX)
+        public void Move(int x)
         {
+            var posX = x - 1;
             var posY = GetLowestEmptyPos(posX);
             Board[posY, posX] = _playerOneMove ? CellState.PlayerOne : CellState.PlayerTwo;
             _playerOneMove = !_playerOneMove;
@@ -68,8 +70,9 @@ namespace GameEngine
             return -1;
         }
 
-        public bool IsColumnFull(int posX)
+        public bool IsColumnFull(int x)
         {
+            var posX = x - 1;
             for (var i = 0; i < BoardHeight; i++)
             {
                 if (Board[i, posX] == CellState.Empty)

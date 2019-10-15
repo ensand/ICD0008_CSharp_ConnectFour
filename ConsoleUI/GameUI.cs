@@ -52,8 +52,9 @@ namespace ConsoleUI
             var line = " ";
             for (var xIndex = 0; xIndex < game.BoardWidth; xIndex++)
             {
-                line += " " + xIndex + " ";
-                if (xIndex < 10)
+                var index = xIndex + 1;
+                line += " " + index + " ";
+                if (index < 10)
                     line += " ";
             }
 

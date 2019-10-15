@@ -4,6 +4,7 @@
     <e p="C:\Users\Enola\.Rider2019.2\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Enola\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_ConnectFour.-1412874436.00" t="ExcludeRecursive" />
     <e p="C:\Users\Enola\RiderProjects\ConnectFour" t="IncludeFlat">
+      <e p=".gitignore" t="Include" />
       <e p="ConnectFour.sln" t="IncludeFlat" />
       <e p="ConsoleApplication" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
@@ -33,7 +34,9 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="CellState.cs" t="Include" />
         <e p="Game.cs" t="Include" />
+        <e p="GameConfigHandler.cs" t="Include" />
         <e p="GameEngine.csproj" t="IncludeRecursive" />
+        <e p="GameSettings.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.0" t="Include">
@@ -56,6 +59,7 @@
         </e>
       </e>
       <e p="packages" t="ExcludeRecursive" />
+      <e p="SolutionFiles" t="Include" />
     </e>
   </component>
 </project>
