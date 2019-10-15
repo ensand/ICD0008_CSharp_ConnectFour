@@ -1,10 +1,12 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace MenuSystem
 {
     public class MenuItem
     {
-        private string _title;
+        [Required]
+        private string _title = default!;
 
         public string Title
         {
@@ -12,8 +14,8 @@ namespace MenuSystem
             set => _title = Validate(value, 1, 100, false);
         }
 
-        public Func<string> commandToExecute { get; set; }
-        
+        [Required] public Func<string> commandToExecute { get; set; } = default!;
+
         private static string Validate(string item, int minLength, int maxLength, bool toUpper)
         {
             item = item.Trim();

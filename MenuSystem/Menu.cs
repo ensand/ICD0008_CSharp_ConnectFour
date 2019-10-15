@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MenuSystem
 {
@@ -12,7 +13,7 @@ namespace MenuSystem
         
         private int _menuLevel;
         
-        public string Title { get; set; }
+        public string? Title { get; set; }
         
         private const string MenuCommandExit = "X";
         private const string MenuCommandReturnToPrevious = "P";
@@ -24,8 +25,8 @@ namespace MenuSystem
         {
             _menuLevel = menuLevel;
         }
-        
-        
+
+        [Required]
         public Dictionary<string, MenuItem> MenuItemsDictionary
         {
             get => _menuItemsDictionary;
@@ -36,10 +37,12 @@ namespace MenuSystem
                 {
                     _menuItemsDictionary.Add("M", new MenuItem() {Title = "Return to main menu"});
                 }
+
                 if (_menuLevel >= 2)
                 {
                     _menuItemsDictionary.Add("P", new MenuItem() {Title = "Return to previous menu"});
                 }
+
                 _menuItemsDictionary.Add("X", new MenuItem() {Title = "Exit"});
 
             }

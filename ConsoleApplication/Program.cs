@@ -8,7 +8,7 @@ namespace ConsoleApplication
 {
     class Program
     {
-        private static GameSettings _settings;
+        private static GameSettings _settings = default!;
 
         static void Main(string[] args)
         {
