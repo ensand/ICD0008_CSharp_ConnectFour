@@ -24,7 +24,7 @@ namespace ConsoleUI
                 Console.Write(_verticalSeparator);
                 for (var xIndex = 0; xIndex < game.BoardWidth; xIndex++)
                 {
-                    Console.Write(" " + GetSingleState(board[yIndex, xIndex]) + " ");
+                    Console.Write(" " + GetSingleState(board[yIndex][xIndex]) + " ");
                     Console.ResetColor();
                     if (xIndex < game.BoardWidth)
                         Console.Write(_verticalSeparator);

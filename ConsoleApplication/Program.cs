@@ -116,6 +116,21 @@ namespace ConsoleApplication
                     }
                 }
             };
+            
+            var loadGameMenu = new Menu(1)
+            {
+                Title = "Load game",
+                MenuItemsDictionary = new Dictionary<string, MenuItem>()
+                {
+                    {
+                        "S", new MenuItem
+                        {
+                            Title = "Start game",
+                            commandToExecute = TestGame
+                        }
+                    }
+                }
+            };
 
             var mainMenu = new Menu(0)
             {
@@ -133,7 +148,7 @@ namespace ConsoleApplication
                         "L", new MenuItem
                         {
                             Title = "Load game",
-                            commandToExecute = null
+                            commandToExecute = loadGameMenu.Run
                         }
                     },
                     {
@@ -151,41 +166,30 @@ namespace ConsoleApplication
 
         static string ChangeBoardHeight()
         {
-            var newValue = -1;
-
-            do
-            {
-                Console.Clear();
-                Console.WriteLine("Current height: " + _settings.BoardHeight);
-                Console.WriteLine("Give me a new height or type c to cancel");
-                Console.Write("> ");
-                var input = Console.ReadLine();
-                if (input.ToLower().Equals("c"))
-                    return "P";
-                
-                if (!int.TryParse(input, out newValue))
-                {
-                    Console.WriteLine($"{input} is not a number.");
-                }
-                
-            } while (newValue < 0);
-            
-            _settings.BoardHeight = newValue;
-            GameConfigHandler.SaveConfig(_settings);
-            return "P";
+            return ChangeBoardSize("height");
         }
         
         static string ChangeBoardWidth()
         {
+            return ChangeBoardSize("width");
+        }
+
+        static String ChangeBoardSize(string settingType)
+        {
             var newValue = -1;
+            var oldValue = settingType.Equals("height") ? _settings.BoardHeight : _settings.BoardWidth;
 
             do
             {
                 Console.Clear();
-                Console.WriteLine("Give me a new width or type c to cancel");
-                Console.WriteLine("Current width: " + _settings.BoardWidth);
+                Console.WriteLine($"Current {settingType}: {oldValue}");
+                Console.WriteLine($"Give me a new {settingType} or type c to cancel");
                 Console.Write("> ");
                 var input = Console.ReadLine();
+
+                if (input == null || input.Trim().Equals(""))
+                    continue;
+                
                 if (input.ToLower().Equals("c"))
                     return "P";
                 
@@ -193,10 +197,19 @@ namespace ConsoleApplication
                 {
                     Console.WriteLine($"{input} is not a number.");
                 }
+
+                if (newValue < _settings.MinSize || newValue > _settings.MaxSize)
+                {
+                    Console.WriteLine($"Please choose a value between {_settings.MinSize} and {_settings.MaxSize}.");
+                }
                 
             } while (newValue < 0);
+
+            if (settingType.Equals("height"))
+                _settings.BoardHeight = newValue;
+            else if (settingType.Equals("width"))
+                _settings.BoardWidth = newValue;
             
-            _settings.BoardWidth = newValue;
             GameConfigHandler.SaveConfig(_settings);
             return "P";
         }
