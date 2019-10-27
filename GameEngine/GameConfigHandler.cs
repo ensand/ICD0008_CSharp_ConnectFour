@@ -1,12 +1,13 @@
+using System;
 using System.Text.Json;
 
 namespace GameEngine
 {
     public class GameConfigHandler
     {
-        private const string FileName = "gamesettings.json";
+        private const string SettingsFileName = "gamesettings.json";
         
-        public static void SaveConfig(GameSettings settings, string fileName = FileName)
+        public static void SaveConfig(GameSettings settings, string fileName = SettingsFileName)
         {
             using (var writer = System.IO.File.CreateText(fileName))
             {
@@ -15,7 +16,7 @@ namespace GameEngine
             }
         }
 
-        public static GameSettings LoadConfig(string fileName = FileName)
+        public static GameSettings LoadConfig(string fileName = SettingsFileName)
         {
             if (System.IO.File.Exists(fileName))
             {
@@ -26,6 +27,22 @@ namespace GameEngine
             }
             
             return new GameSettings();
+        }
+
+        public static void SaveGame(CellState[][] board, string fileName)
+        {
+            System.IO.Directory.CreateDirectory(System.IO.Directory.GetCurrentDirectory() + "/saves");
+            var path = System.IO.Directory.GetCurrentDirectory() + "/saves/" + fileName;
+            using (var writer = System.IO.File.CreateText(path))
+            {
+                var jsonString = JsonSerializer.Serialize(board);
+                writer.Write(jsonString);
+            }
+        }
+
+        public static void LoadGame(string fileName)
+        {
+            
         }
     }
 }

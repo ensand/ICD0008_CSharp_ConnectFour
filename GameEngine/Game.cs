@@ -14,7 +14,7 @@ namespace GameEngine
         public int BoardHeight { get; }
         public int BoardWidth { get; }
 
-        private bool _playerOneMove;
+        public bool PlayerOneMove { get; set; }
 
         private CellState[][] InitializeBoard(int height, int width)
         {
@@ -65,8 +65,8 @@ namespace GameEngine
         {
             var posX = x - 1;
             var posY = GetLowestEmptyPos(posX);
-            Board[posY][posX] = _playerOneMove ? CellState.PlayerOne : CellState.PlayerTwo;
-            _playerOneMove = !_playerOneMove;
+            Board[posY][posX] = PlayerOneMove ? CellState.PlayerOne : CellState.PlayerTwo;
+            PlayerOneMove = !PlayerOneMove;
         }
 
         private int GetLowestEmptyPos(int posX)

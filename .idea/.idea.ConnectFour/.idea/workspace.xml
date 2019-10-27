@@ -6,28 +6,20 @@
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/ConsoleApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/ConsoleApplication.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/ConsoleApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/ConsoleApplication.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/ConsoleUI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/ConsoleUI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/ConsoleUI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/ConsoleUI.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/GameEngine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/GameEngine.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/GameEngine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/GameEngine.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/obj/Debug/netcoreapp3.0/ConsoleApplication.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/obj/Debug/netcoreapp3.0/ConsoleApplication.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/obj/Debug/netcoreapp3.0/ConsoleApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/obj/Debug/netcoreapp3.0/ConsoleApplication.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/obj/Debug/netcoreapp3.0/ConsoleApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/obj/Debug/netcoreapp3.0/ConsoleApplication.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleUI/GameUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleUI/GameUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleUI/bin/Debug/netcoreapp3.0/ConsoleUI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleUI/bin/Debug/netcoreapp3.0/ConsoleUI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleUI/bin/Debug/netcoreapp3.0/ConsoleUI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleUI/bin/Debug/netcoreapp3.0/ConsoleUI.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleUI/bin/Debug/netcoreapp3.0/GameEngine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleUI/bin/Debug/netcoreapp3.0/GameEngine.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleUI/bin/Debug/netcoreapp3.0/GameEngine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleUI/bin/Debug/netcoreapp3.0/GameEngine.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleUI/obj/Debug/netcoreapp3.0/ConsoleUI.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleUI/obj/Debug/netcoreapp3.0/ConsoleUI.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleUI/obj/Debug/netcoreapp3.0/ConsoleUI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleUI/obj/Debug/netcoreapp3.0/ConsoleUI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleUI/obj/Debug/netcoreapp3.0/ConsoleUI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleUI/obj/Debug/netcoreapp3.0/ConsoleUI.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/GameSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/GameSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/GameConfigHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/GameConfigHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/bin/Debug/netcoreapp3.0/GameEngine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/bin/Debug/netcoreapp3.0/GameEngine.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/bin/Debug/netcoreapp3.0/GameEngine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/bin/Debug/netcoreapp3.0/GameEngine.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/obj/Debug/netcoreapp3.0/GameEngine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/obj/Debug/netcoreapp3.0/GameEngine.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/obj/Debug/netcoreapp3.0/GameEngine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/obj/Debug/netcoreapp3.0/GameEngine.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/Debug/netcoreapp3.0/MenuSystem.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/Debug/netcoreapp3.0/MenuSystem.csprojAssemblyReference.cache" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,15 +50,16 @@
         <option value="$PROJECT_DIR$/GameEngine/CellState.cs" />
         <option value="$PROJECT_DIR$/GameEngine/DefaultSettings.cs" />
         <option value="$PROJECT_DIR$/ConsoleUI/OptionsUI.cs" />
-        <option value="$PROJECT_DIR$/GameEngine/GameConfigHandler.cs" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.gitignore" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/MenuSystem/Menu.cs" />
         <option value="$PROJECT_DIR$/MenuSystem/MenuItem.cs" />
         <option value="$PROJECT_DIR$/GameEngine/GameSettings.cs" />
-        <option value="$PROJECT_DIR$/ConsoleApplication/Program.cs" />
-        <option value="$PROJECT_DIR$/GameEngine/Game.cs" />
         <option value="$PROJECT_DIR$/ConsoleUI/GameUI.cs" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/FindsWorthSaving.txt" />
+        <option value="$PROJECT_DIR$/GameEngine/Game.cs" />
+        <option value="$PROJECT_DIR$/GameEngine/GameConfigHandler.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApplication/Program.cs" />
       </list>
     </option>
   </component>
@@ -156,7 +149,7 @@
       <workItem from="1571166043551" duration="6689000" />
       <workItem from="1571173310355" duration="505000" />
       <workItem from="1571175442397" duration="1390000" />
-      <workItem from="1572186912377" duration="4029000" />
+      <workItem from="1572186912377" duration="13831000" />
     </task>
     <servers />
   </component>
