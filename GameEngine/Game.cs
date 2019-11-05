@@ -11,8 +11,8 @@ namespace GameEngine
         
         private CellState[][] Board { get; set; }
 
-        public int BoardHeight { get; }
-        public int BoardWidth { get; }
+        public int BoardHeight { get; set; }
+        public int BoardWidth { get; set; }
 
         public bool PlayerOneMove { get; set; }
 
@@ -43,7 +43,13 @@ namespace GameEngine
             return result;
         }
 
-
+        public void LoadGame(CellState[][] board)
+        {
+            Board = board;
+            BoardHeight = board.Length;
+            BoardWidth = board[0].Length;
+        }
+        
         public bool IsGameDone()
         {
             for (var yIndex = 0; yIndex < BoardHeight; yIndex++)

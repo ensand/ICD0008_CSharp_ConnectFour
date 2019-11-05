@@ -14,7 +14,7 @@ namespace MenuSystem
             set => _title = Validate(value, 1, 100, false);
         }
 
-        [Required] public Func<string> commandToExecute { get; set; } = default!;
+        [Required] public Func<string> CommandToExecute { get; set; } = default!;
 
         private static string Validate(string item, int minLength, int maxLength, bool toUpper)
         {

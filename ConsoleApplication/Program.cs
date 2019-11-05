@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 using ConsoleUI;
 using GameEngine;
 using MenuSystem;
@@ -17,56 +18,6 @@ namespace ConsoleApplication
 
             _settings = GameConfigHandler.LoadConfig();
 
-            var difficultyMenu = new Menu(2)
-            {
-                Title = "Select difficulty",
-                MenuItemsDictionary = new Dictionary<string, MenuItem>()
-                {
-                    {
-                        "1", new MenuItem
-                        {
-                            Title = "Easy",
-                            commandToExecute = RunGame
-                        }
-                    },
-                    {
-                        "2", new MenuItem
-                        {
-                            Title = "Moderate",
-                            commandToExecute = RunGame
-                        }
-                    },
-                    {
-                        "3", new MenuItem
-                        {
-                            Title = "Hard",
-                            commandToExecute = RunGame
-                        }
-                    },
-                    {
-                        "4", new MenuItem
-                        {
-                            Title = "Extreme",
-                            commandToExecute = RunGame
-                        }
-                    },
-                    {
-                        "5", new MenuItem
-                        {
-                            Title = "Impossible",
-                            commandToExecute = RunGame
-                        }
-                    },
-                    {
-                        "666", new MenuItem
-                        {
-                            Title = "Even Satan would not use this in Hell",
-                            commandToExecute = RunGame
-                        }
-                    }
-                }
-            };
-            
             var boardSizesMenu = new Menu(1)
             {
                 Title = "Options", 
@@ -76,14 +27,14 @@ namespace ConsoleApplication
                         "1", new MenuItem
                         {
                             Title = "Change board height",
-                            commandToExecute = ChangeBoardHeight
+                            CommandToExecute = ChangeBoardHeight
                         }
                     },
                     {
                         "2", new MenuItem
                         {
                             Title = "Change board width",
-                            commandToExecute = ChangeBoardWidth
+                            CommandToExecute = ChangeBoardWidth
                         }
                     }
                 }
@@ -98,32 +49,26 @@ namespace ConsoleApplication
                         "1", new MenuItem
                         {
                             Title = "Computer starts",
-                            commandToExecute = RunGame
+                            CommandToExecute = RunGame
                         }
                     },
                     {
                         "2", new MenuItem
                         {
                             Title = "Human starts",
-                            commandToExecute = RunGame
+                            CommandToExecute = RunGame
                         }
                     },
                     {
                         "3", new MenuItem
                         {
                             Title = "Human against human",
-                            commandToExecute = RunGame
+                            CommandToExecute = RunGame
                         }
                     }
                 }
             };
             
-            var loadGameMenu = new Menu(1)
-            {
-                Title = "Load game",
-                MenuItemsDictionary = GetSavedGamesDictionary()
-            };
-
             var mainMenu = new Menu(0)
             {
                 Title = "Connect Four", 
@@ -133,21 +78,21 @@ namespace ConsoleApplication
                         "S", new MenuItem
                         {
                             Title = "Start game",
-                            commandToExecute = gameMenu.Run
+                            CommandToExecute = gameMenu.Run
                         }
                     },
                     {
                         "L", new MenuItem
                         {
                             Title = "Load game",
-                            commandToExecute = loadGameMenu.Run
+                            CommandToExecute = LoadGame
                         }
                     },
                     {
                         "O", new MenuItem
                         {
                             Title = "Change board options",
-                            commandToExecute = boardSizesMenu.Run
+                            CommandToExecute = boardSizesMenu.Run
                         }
                     }
                 }
@@ -204,28 +149,69 @@ namespace ConsoleApplication
             return "P";
         }
 
-        static Dictionary<string, MenuItem> GetSavedGamesDictionary()
+        static string RunGame()
         {
-            var filePaths = Directory.GetFiles(System.IO.Directory.GetCurrentDirectory() + "/saves/");
-            var savedGamedDictionary = new Dictionary<string, MenuItem>();
+            StartGame(null);
+            return "";
+        }
+
+        static string LoadGame()
+        {
+            Console.Clear();
+            string[] filePaths = Directory.GetFiles(System.IO.Directory.GetCurrentDirectory() + "/saves/");
+            var savedGamedDictionary = new Dictionary<int, string>();
+
+            if (filePaths.Length == 0)
+            {
+                Console.WriteLine("No save files found...");
+                Console.WriteLine("Returning to previous menu.");
+                Thread.Sleep(3000);
+                return "";
+            }
             
             for (var i = 0; i < filePaths.Length; i++)
             {
-                var menuItem = new MenuItem()
-                {
-                    Title = filePaths[i].Split("/")[filePaths[i].Split("/").Length-1].Replace(".json", ""),
-                    commandToExecute = RunGame
-                };
-                
-                savedGamedDictionary.Add((i + 1).ToString(), menuItem);
+                var fileName = filePaths[i].Split("/")[filePaths[i].Split("/").Length - 1].Replace(".json", "");
+                savedGamedDictionary.Add((i+1), fileName);
+                Console.WriteLine((i+1) + ". " + fileName);
             }
 
-            return savedGamedDictionary;
+            var done = false;
+            do
+            {
+                Console.WriteLine("Select game by number or type \'c\' to cancel.");
+                var userInput = Console.ReadLine();
+                var selectedGameInt = -1;
+
+                if (userInput == null || userInput.Trim().Equals("") || userInput.ToLower().Equals("c"))
+                    return "";
+                
+                if (!int.TryParse(userInput, out selectedGameInt))
+                {
+                    Console.WriteLine($"{userInput} is not a number.");
+                    continue;
+                }
+
+                if (selectedGameInt <= 0 || savedGamedDictionary.Count < selectedGameInt)
+                {
+                    Console.WriteLine($"Game {selectedGameInt} does not exist.");
+                    continue;
+                }
+
+                Game game = GameConfigHandler.LoadGame(filePaths[selectedGameInt-1]);
+                StartGame(game);
+                return "";
+
+            } while (!done);
+
+            return "";
         }
 
-        static string RunGame()
+        static string StartGame(Game? game)
         {
-            var game = new Game(_settings);
+            if (game == null)
+                game = new Game(_settings);
+            
             var done = false;
 
             do
@@ -281,7 +267,6 @@ namespace ConsoleApplication
 
                                     fileName = input.Trim() + ".json";
                                     Console.WriteLine($"Saved game as \'{input}\'!");
-                                    // SAVE GAME
                                     GameConfigHandler.SaveGame(game.GetBoard(), fileName);
                                     saved = true;
                                 }

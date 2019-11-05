@@ -8,6 +8,8 @@
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/ConsoleApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/ConsoleApplication.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/GameEngine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/GameEngine.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/GameEngine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/GameEngine.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/MenuSystem.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/MenuSystem.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/MenuSystem.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/MenuSystem.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/obj/Debug/netcoreapp3.0/ConsoleApplication.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/obj/Debug/netcoreapp3.0/ConsoleApplication.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/obj/Debug/netcoreapp3.0/ConsoleApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/obj/Debug/netcoreapp3.0/ConsoleApplication.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/obj/Debug/netcoreapp3.0/ConsoleApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/obj/Debug/netcoreapp3.0/ConsoleApplication.pdb" afterDir="false" />
@@ -20,6 +22,13 @@
       <change beforePath="$PROJECT_DIR$/GameEngine/bin/Debug/netcoreapp3.0/GameEngine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/bin/Debug/netcoreapp3.0/GameEngine.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/obj/Debug/netcoreapp3.0/GameEngine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/obj/Debug/netcoreapp3.0/GameEngine.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/obj/Debug/netcoreapp3.0/GameEngine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/obj/Debug/netcoreapp3.0/GameEngine.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/Menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/Menu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/MenuItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/MenuItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/bin/Debug/netcoreapp3.0/MenuSystem.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/bin/Debug/netcoreapp3.0/MenuSystem.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/bin/Debug/netcoreapp3.0/MenuSystem.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/bin/Debug/netcoreapp3.0/MenuSystem.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/Debug/netcoreapp3.0/MenuSystem.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/Debug/netcoreapp3.0/MenuSystem.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/Debug/netcoreapp3.0/MenuSystem.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/Debug/netcoreapp3.0/MenuSystem.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/Debug/netcoreapp3.0/MenuSystem.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/Debug/netcoreapp3.0/MenuSystem.pdb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,11 +61,11 @@
         <option value="$PROJECT_DIR$/ConsoleUI/OptionsUI.cs" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.gitignore" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/MenuSystem/Menu.cs" />
-        <option value="$PROJECT_DIR$/MenuSystem/MenuItem.cs" />
         <option value="$PROJECT_DIR$/GameEngine/GameSettings.cs" />
         <option value="$PROJECT_DIR$/ConsoleUI/GameUI.cs" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/FindsWorthSaving.txt" />
+        <option value="$PROJECT_DIR$/MenuSystem/Menu.cs" />
+        <option value="$PROJECT_DIR$/MenuSystem/MenuItem.cs" />
         <option value="$PROJECT_DIR$/GameEngine/Game.cs" />
         <option value="$PROJECT_DIR$/GameEngine/GameConfigHandler.cs" />
         <option value="$PROJECT_DIR$/ConsoleApplication/Program.cs" />
@@ -77,7 +86,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -149,7 +158,9 @@
       <workItem from="1571166043551" duration="6689000" />
       <workItem from="1571173310355" duration="505000" />
       <workItem from="1571175442397" duration="1390000" />
-      <workItem from="1572186912377" duration="13831000" />
+      <workItem from="1572186912377" duration="15392000" />
+      <workItem from="1572456317046" duration="2836000" />
+      <workItem from="1572949722163" duration="3440000" />
     </task>
     <servers />
   </component>

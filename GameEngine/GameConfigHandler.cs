@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Text.Json;
 
 namespace GameEngine
@@ -40,9 +41,12 @@ namespace GameEngine
             }
         }
 
-        public static void LoadGame(string fileName)
+        public static Game LoadGame(string fileLocation)
         {
-            
+            string jsonString = File.ReadAllText(fileLocation);
+            Game game = new Game(LoadConfig());
+            game.LoadGame(JsonSerializer.Deserialize<CellState[][]>(jsonString));
+            return game;
         }
     }
 }

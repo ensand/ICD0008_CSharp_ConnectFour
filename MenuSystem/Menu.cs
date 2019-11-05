@@ -72,9 +72,9 @@ namespace MenuSystem
                 
                 if (MenuItemsDictionary.ContainsKey(command))
                 {
-                    if (MenuItemsDictionary[command].commandToExecute != null)
+                    if (MenuItemsDictionary[command].CommandToExecute != null)
                     {
-                        returnCommand = MenuItemsDictionary[command].commandToExecute(); // Run the command
+                        returnCommand = MenuItemsDictionary[command].CommandToExecute(); // Run the command
                     }
                 }
                 
