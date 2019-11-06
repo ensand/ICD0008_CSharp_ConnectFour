@@ -53,18 +53,24 @@
             "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Enola\\RiderProjects\\ConnectFour\\GameEngine\\GameEngine.csproj": {
+    "C:\\Users\\Enola\\RiderProjects\\ConnectFour\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Enola\\RiderProjects\\ConnectFour\\GameEngine\\GameEngine.csproj",
-        "projectName": "GameEngine",
-        "projectPath": "C:\\Users\\Enola\\RiderProjects\\ConnectFour\\GameEngine\\GameEngine.csproj",
+        "projectUniqueName": "C:\\Users\\Enola\\RiderProjects\\ConnectFour\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "C:\\Users\\Enola\\RiderProjects\\ConnectFour\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Enola\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Enola\\RiderProjects\\ConnectFour\\GameEngine\\obj\\",
+        "outputPath": "C:\\Users\\Enola\\RiderProjects\\ConnectFour\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -102,7 +108,72 @@
             "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Enola\\RiderProjects\\ConnectFour\\GameEngine\\GameEngine.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Enola\\RiderProjects\\ConnectFour\\GameEngine\\GameEngine.csproj",
+        "projectName": "GameEngine",
+        "projectPath": "C:\\Users\\Enola\\RiderProjects\\ConnectFour\\GameEngine\\GameEngine.csproj",
+        "packagesPath": "C:\\Users\\Enola\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Enola\\RiderProjects\\ConnectFour\\GameEngine\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Enola\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "C:\\Users\\Enola\\RiderProjects\\ConnectFour\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Enola\\RiderProjects\\ConnectFour\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

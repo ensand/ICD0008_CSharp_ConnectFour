@@ -9,3 +9,5 @@ C:\Users\Enola\RiderProjects\ConnectFour\ConsoleUI\obj\Debug\netcoreapp3.0\Conso
 C:\Users\Enola\RiderProjects\ConnectFour\ConsoleUI\obj\Debug\netcoreapp3.0\ConsoleUI.csproj.CopyComplete
 C:\Users\Enola\RiderProjects\ConnectFour\ConsoleUI\obj\Debug\netcoreapp3.0\ConsoleUI.dll
 C:\Users\Enola\RiderProjects\ConnectFour\ConsoleUI\obj\Debug\netcoreapp3.0\ConsoleUI.pdb
+C:\Users\Enola\RiderProjects\ConnectFour\ConsoleUI\bin\Debug\netcoreapp3.0\Domain.dll
+C:\Users\Enola\RiderProjects\ConnectFour\ConsoleUI\bin\Debug\netcoreapp3.0\Domain.pdb

@@ -18,7 +18,11 @@
     },
     "frameworks": {
       "netcoreapp3.0": {
-        "projectReferences": {}
+        "projectReferences": {
+          "C:\\Users\\Enola\\RiderProjects\\ConnectFour\\Domain\\Domain.csproj": {
+            "projectPath": "C:\\Users\\Enola\\RiderProjects\\ConnectFour\\Domain\\Domain.csproj"
+          }
+        }
       }
     },
     "warningProperties": {

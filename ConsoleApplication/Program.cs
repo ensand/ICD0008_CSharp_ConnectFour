@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using ConsoleUI;
+using DAL;
+using Domain;
 using GameEngine;
 using MenuSystem;
 
@@ -10,13 +12,12 @@ namespace ConsoleApplication
 {
     class Program
     {
-        private static GameSettings _settings = default!;
+        private static GameSettings _settings = new GameSettings();
+        private static AppDbContext? ctx;
 
         static void Main(string[] args)
         {
             Console.Clear();
-
-            _settings = GameConfigHandler.LoadConfig();
 
             var boardSizesMenu = new Menu(1)
             {
@@ -145,7 +146,6 @@ namespace ConsoleApplication
             else if (settingType.Equals("width"))
                 _settings.BoardWidth = newValue;
             
-            GameConfigHandler.SaveConfig(_settings);
             return "P";
         }
 
@@ -158,28 +158,35 @@ namespace ConsoleApplication
         static string LoadGame()
         {
             Console.Clear();
-            string[] filePaths = Directory.GetFiles(System.IO.Directory.GetCurrentDirectory() + "/saves/");
             var savedGamedDictionary = new Dictionary<int, string>();
 
-            if (filePaths.Length == 0)
+            using (ctx = new AppDbContext())
+            {
+                var counter = 1;
+                foreach (var saveGame in ctx.SaveGames)
+                {
+                    savedGamedDictionary.Add(counter, saveGame.SaveGameName);
+                    counter += 1;
+                }
+            }
+
+            if (savedGamedDictionary.Count == 0)
             {
                 Console.WriteLine("No save files found...");
                 Console.WriteLine("Returning to previous menu.");
                 Thread.Sleep(3000);
                 return "";
             }
-            
-            for (var i = 0; i < filePaths.Length; i++)
-            {
-                var fileName = filePaths[i].Split("/")[filePaths[i].Split("/").Length - 1].Replace(".json", "");
-                savedGamedDictionary.Add((i+1), fileName);
-                Console.WriteLine((i+1) + ". " + fileName);
-            }
 
+            Console.WriteLine("Select game by number or type \'c\' to cancel.");
+            for (var i = 1; i <= savedGamedDictionary.Count; i++)
+            {
+                Console.WriteLine(i + ". " + savedGamedDictionary[i]);
+            }
+            
             var done = false;
             do
             {
-                Console.WriteLine("Select game by number or type \'c\' to cancel.");
                 var userInput = Console.ReadLine();
                 var selectedGameInt = -1;
 
@@ -197,10 +204,20 @@ namespace ConsoleApplication
                     Console.WriteLine($"Game {selectedGameInt} does not exist.");
                     continue;
                 }
-
-                Game game = GameConfigHandler.LoadGame(filePaths[selectedGameInt-1]);
-                StartGame(game);
-                return "";
+                
+                using (ctx = new AppDbContext())
+                {
+                    foreach (var saveGame in ctx.SaveGames)
+                    {
+                        if (saveGame.SaveGameName.Equals(savedGamedDictionary[selectedGameInt]))
+                        {
+                            Game game = GameConfigHandler.LoadGameFromDb(saveGame.Board);
+                            StartGame(game);
+                            return "";
+                        }
+                    }
+                    return "";
+                }
 
             } while (!done);
 
@@ -259,15 +276,30 @@ namespace ConsoleApplication
                                 }
                                 else
                                 {
-                                    if (File.Exists(System.IO.Directory.GetCurrentDirectory() + "/saves/" + input + ".json"))
+                                    var exists = false;
+                                    using (ctx = new AppDbContext())
                                     {
-                                        Console.WriteLine("File already exists!");
-                                        continue;
+                                        foreach (var savedGame in ctx.SaveGames)
+                                        {
+                                            if (savedGame.SaveGameName.Equals(input.Trim()))
+                                            {
+                                                Console.WriteLine("File already exists!");
+                                                exists = true;
+                                                break;
+                                            }
+                                        }
                                     }
+                                    if (exists)
+                                        continue;
 
-                                    fileName = input.Trim() + ".json";
+                                    fileName = input.Trim();
+                                    SaveGame saveGame = GameConfigHandler.GetSaveGame(game.GetBoard(), fileName);
+                                    using (ctx = new AppDbContext())
+                                    {
+                                        ctx.SaveGames.Add(saveGame);
+                                        ctx.SaveChanges();
+                                    }
                                     Console.WriteLine($"Saved game as \'{input}\'!");
-                                    GameConfigHandler.SaveGame(game.GetBoard(), fileName);
                                     saved = true;
                                 }
                             } while (!saved);

@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v3.0": {
       "GameEngine/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
         "runtime": {
           "GameEngine.dll": {}
+        }
+      },
+      "Domain/1.0.0": {
+        "runtime": {
+          "Domain.dll": {}
         }
       }
     }
   },
   "libraries": {
     "GameEngine/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

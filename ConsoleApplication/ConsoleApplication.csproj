@@ -8,8 +8,13 @@
 
     <ItemGroup>
       <ProjectReference Include="..\ConsoleUI\ConsoleUI.csproj" />
+      <ProjectReference Include="..\DAL\DAL.csproj" />
       <ProjectReference Include="..\GameEngine\GameEngine.csproj" />
       <ProjectReference Include="..\MenuSystem\MenuSystem.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.0.0" />
     </ItemGroup>
 
 </Project>

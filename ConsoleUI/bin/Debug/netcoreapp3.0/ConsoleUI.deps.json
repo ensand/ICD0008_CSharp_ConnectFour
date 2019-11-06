@@ -14,7 +14,15 @@
           "ConsoleUI.dll": {}
         }
       },
+      "Domain/1.0.0": {
+        "runtime": {
+          "Domain.dll": {}
+        }
+      },
       "GameEngine/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
         "runtime": {
           "GameEngine.dll": {}
         }
@@ -23,6 +31,11 @@
   },
   "libraries": {
     "ConsoleUI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,51 +1,48 @@
 using System;
 using System.IO;
+using System.Text;
 using System.Text.Json;
+using Domain;
 
 namespace GameEngine
 {
     public class GameConfigHandler
     {
-        private const string SettingsFileName = "gamesettings.json";
-        
-        public static void SaveConfig(GameSettings settings, string fileName = SettingsFileName)
+        public static SaveGame GetSaveGame(CellState[][] board, string saveName)
         {
-            using (var writer = System.IO.File.CreateText(fileName))
+            return new SaveGame()
             {
-                var jsonString = JsonSerializer.Serialize(settings);
-                writer.Write(jsonString);
-            }
+                Board = JsonSerializer.Serialize(board),
+                PlayerOneMove = false,
+                SaveGameName = saveName
+            };
         }
 
-        public static GameSettings LoadConfig(string fileName = SettingsFileName)
+        public static Game LoadGameFromDb(string boardString)
         {
-            if (System.IO.File.Exists(fileName))
+            var sb = new StringBuilder(boardString);
+            sb.Remove(0, 1);
+            sb.Remove(sb.Length-1, 1);
+            int height = sb.ToString().Split("[").Length - 1;
+            int width = 0;
+            for (var i = 0; i < sb.ToString().Length; i++)
             {
-                var jsonString = System.IO.File.ReadAllText(fileName);
-                var res = JsonSerializer.Deserialize<GameSettings>(jsonString);
-                
-                return res;
-            }
-            
-            return new GameSettings();
-        }
+                if (sb.ToString()[i].Equals(',') || sb.ToString()[i].Equals('['))
+                    continue;
 
-        public static void SaveGame(CellState[][] board, string fileName)
-        {
-            System.IO.Directory.CreateDirectory(System.IO.Directory.GetCurrentDirectory() + "/saves");
-            var path = System.IO.Directory.GetCurrentDirectory() + "/saves/" + fileName;
-            using (var writer = System.IO.File.CreateText(path))
+                if (sb.ToString()[i].Equals(']'))
+                    break;
+
+                width += 1;
+            }
+
+            Console.WriteLine(height + " " + width);
+            Game game = new Game(new GameSettings()
             {
-                var jsonString = JsonSerializer.Serialize(board);
-                writer.Write(jsonString);
-            }
-        }
-
-        public static Game LoadGame(string fileLocation)
-        {
-            string jsonString = File.ReadAllText(fileLocation);
-            Game game = new Game(LoadConfig());
-            game.LoadGame(JsonSerializer.Deserialize<CellState[][]>(jsonString));
+                BoardHeight = height,
+                BoardWidth = width
+            });
+            game.LoadGame(JsonSerializer.Deserialize<CellState[][]>(boardString));
             return game;
         }
     }

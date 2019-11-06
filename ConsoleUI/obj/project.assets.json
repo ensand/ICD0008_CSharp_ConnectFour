@@ -2,9 +2,22 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.0": {
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      },
       "GameEngine/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/GameEngine.dll": {}
         },
@@ -15,6 +28,11 @@
     }
   },
   "libraries": {
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
+    },
     "GameEngine/1.0.0": {
       "type": "project",
       "path": "../GameEngine/GameEngine.csproj",
@@ -79,7 +97,13 @@
           "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
