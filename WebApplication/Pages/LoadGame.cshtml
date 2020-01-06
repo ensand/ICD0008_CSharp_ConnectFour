@@ -1,0 +1,43 @@
+@page
+@model WebApplication.Pages.LoadGame
+@{
+    // Layout = null;
+    ViewData["Title"] = "Load Game";
+}
+
+<div>
+    <h1 class="display-4 title">Load game</h1>
+    
+    <table style="width: 100%">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Created</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr style="border-bottom: 1px solid lightgray; line-height: 2">
+            <td class="delete_button" title="Delete saved game">x</td>
+            <td>
+                Test01
+            </td>
+            <td>
+                01.01.1999 - 00.00
+            </td>
+            <td style="display: flex; justify-content: flex-end; line-height: initial"><a class="custom_button" asp-page="PlayGame">Play</a></td>
+        </tr>
+        <tr style="border-bottom: 1px solid lightgray; line-height: 2">
+            <td class="delete_button" title="Delete saved game">x</td>
+            <td>
+                Test02
+            </td>
+            <td>
+                01.01.1999 - 00.01
+            </td>
+            <td style="display: flex; justify-content: flex-end; line-height: initial"><a class="custom_button" asp-page="PlayGame">Play</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

@@ -59,13 +59,6 @@ namespace ConsoleApplication
                             Title = "Human starts",
                             CommandToExecute = RunGame
                         }
-                    },
-                    {
-                        "3", new MenuItem
-                        {
-                            Title = "Human against human",
-                            CommandToExecute = RunGame
-                        }
                     }
                 }
             };
