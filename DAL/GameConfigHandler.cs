@@ -3,7 +3,6 @@ using System.Data;
 using System.Linq;
 using System.Text.Json;
 using GameEngine;
-using Microsoft.EntityFrameworkCore;
 
 namespace DAL
 {
@@ -13,29 +12,20 @@ namespace DAL
         {
             using (var ctx = new AppDbContext())
             {
-                // if (ctx.Games.Find(game.GameId) != null && !overwrite)
-                // {
-                //  todo handle several game copies with unique ids   
-                // }
-                
-                if (ctx.Games.Any(g => g.SaveName == saveName) && !overwrite)
+                if (ctx.Games.Any(g => g.SaveName.Equals(saveName)) && !overwrite)
                     return true;
 
                 game.SaveName = saveName;
 
                 if (overwrite)
                 {
-                    var gameToDel = ctx.Games.FirstOrDefault(g => g.SaveName == saveName);
-                    if (gameToDel != null) ctx.Entry((object) gameToDel).State = EntityState.Deleted;
+                    var gameToDel = ctx.Games.First(g => g.SaveName == saveName);
+                    ctx.Games.Remove(gameToDel);
                 }
 
-                game.SaveName = saveName;
                 game.BoardString = JsonSerializer.Serialize(game.GetBoard());
                 game.SaveCreationDateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-                game.BoardWidth = game.BoardWidth;
-                game.BoardHeight = game.BoardHeight;
-                game.PlayerOneMove = game.PlayerOneMove;
-                
+
                 ctx.Games.Add(game);
                 ctx.SaveChanges();
                 return false;

@@ -12,7 +12,7 @@
     
     <div style="display: flex; flex-direction: row;">
         <form method="post" style="width: 50%; display: flex; flex-direction: column; justify-content: space-between; height: 8rem;">
-            <input asp-for="SaveName" class="custom_input" style="width: 20rem"/>
+            <input asp-for="SaveName" autofocus class="custom_input" style="width: 20rem"/>
             <div><input asp-for="Overwrite" type="checkbox"/> Overwrite</div>
             <div>
                <button type="submit" class="custom_button">Save</button>
@@ -25,19 +25,35 @@
                 <tr>
                     <th>Name</th>
                     <th>Created</th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach(var savedGame in Model.SavedGames)
                 {
-                    <tr style="border-bottom: 1px solid lightgray; line-height: 2">
-                        <td>
-                            @Html.DisplayFor(modelItem => savedGame.SaveName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => savedGame.SaveCreationDateTime)
-                        </td>
-                    </tr>
+                    @if (savedGame.GameId == Model.GameId)
+                    {
+                        <tr style="border-bottom: 1px solid lightgray; line-height: 2; background: #cef3ff">
+                            <td>
+                                @Html.DisplayFor(modelItem => savedGame.SaveName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => savedGame.SaveCreationDateTime)
+                            </td>
+                            <th>You are playing this</th>
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr style="border-bottom: 1px solid lightgray; line-height: 2">
+                            <td>
+                                @Html.DisplayFor(modelItem => savedGame.SaveName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => savedGame.SaveCreationDateTime)
+                            </td>
+                        </tr>
+                    }
                 }
                 </tbody>
             </table>

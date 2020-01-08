@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using ConsoleUI;
 using DAL;
@@ -292,43 +291,6 @@ namespace ConsoleApplication
                                     Console.WriteLine($"Saved game as \'{input}\'!");
                                     saved = true;
                                 }
-                                
-                                
-                                // Game existingGame;
-                                // using (ctx = new AppDbContext())
-                                // {
-                                //     existingGame = ctx.Games.FirstOrDefault(g => g.SaveName.Equals(input));
-                                // }
-                                //
-                                // if (existingGame != null)
-                                // {
-                                //     Console.WriteLine("File already exists. Overwrite it? y/n");
-                                //     var overwriteHandled = false;
-                                //     do
-                                //     {
-                                //         var response = Console.ReadLine()?.Trim().ToLower();
-                                //         if (response == null || response.Equals(""))
-                                //             continue;
-                                //                     
-                                //         if (response.Equals("y") || response.Equals("yes"))
-                                //         {
-                                //             GameConfigHandler.SaveGame(game, input.Trim(), true);
-                                //             Console.WriteLine($"Saved game as \'{input}\'!");
-                                //             saved = true;
-                                //             overwriteHandled = true;
-                                //         }
-                                //                 
-                                //         if (response.Equals("n") || response.Equals("no"))
-                                //             overwriteHandled = true;
-                                //                     
-                                //     } while (!overwriteHandled);
-                                // } else
-                                // {
-                                //     var fileName = input.Trim();
-                                //     GameConfigHandler.SaveGame(game, fileName, false);
-                                //     Console.WriteLine($"Saved game as \'{input}\'!");
-                                //     saved = true;
-                                // }
                             }
                         } while (!saved);
                         userXInt = -1;

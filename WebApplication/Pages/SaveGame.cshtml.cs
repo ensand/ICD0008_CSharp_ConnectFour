@@ -56,22 +56,21 @@ namespace WebApplication.Pages
                 return RedirectToPage("Index", new {error = "game-not-found"});
 
             if (SaveName == null || SaveName.Trim().Equals("")) return Page();
+            
+            var prevSave = _context.Games.AsNoTracking().FirstOrDefault(g => g.SaveName.Equals(SaveName));
+
+            if (prevSave != null && Overwrite)
             {
-                var prevSave = _context.Games.AsNoTracking().FirstOrDefault(g => g.SaveName.Equals(SaveName));
-
-                if (prevSave != null && Overwrite)
-                {
-                    _context.Games.Remove(prevSave);
-                }
-
-                if (prevSave != null && !Overwrite) return RedirectToPage("PlayGame", new {gameId = GameId});
-                
-                game.SaveName = SaveName;
-                _context.Games.Update(game);
-                await _context.SaveChangesAsync();
-
-                return RedirectToPage("PlayGame", new {gameId = GameId});
+                _context.Games.Remove(prevSave);
             }
+
+            if (prevSave != null && !Overwrite) return RedirectToPage("PlayGame", new {gameId = GameId});
+            
+            game.SaveName = SaveName;
+            _context.Games.Update(game);
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage("PlayGame", new {gameId = GameId});
         }
     }
 }
