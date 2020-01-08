@@ -3,37 +3,46 @@ using System.Data;
 using System.Linq;
 using System.Text.Json;
 using GameEngine;
+using Microsoft.EntityFrameworkCore;
 
 namespace DAL
 {
     public class GameConfigHandler
     {
-        public static void SaveGame(Game game, string? saveName, bool overwrite)
+        public static bool SaveGame(Game game, string? saveName, bool overwrite)
         {
             using (var ctx = new AppDbContext())
             {
+                // if (ctx.Games.Find(game.GameId) != null && !overwrite)
+                // {
+                //  todo handle several game copies with unique ids   
+                // }
+                
+                if (ctx.Games.Any(g => g.SaveName == saveName) && !overwrite)
+                    return true;
+
+                game.SaveName = saveName;
+
                 if (overwrite)
                 {
-                    Game savedGame = ctx.Games.First(g => g.SaveName.Equals(saveName));
-                    savedGame.BoardString = JsonSerializer.Serialize(game.GetBoard());
-                    savedGame.SaveCreationDateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-                    savedGame.BoardWidth = game.BoardWidth;
-                    savedGame.BoardHeight = game.BoardHeight;
-                    savedGame.PlayerOneMove = game.PlayerOneMove;
-
-                    ctx.SaveChanges();
-                } else
-                {
-                    game.SaveCreationDateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-                    game.BoardString = JsonSerializer.Serialize(game.GetBoard());
-                    game.SaveName = saveName;
-                    ctx.Games.Add(game);
-                    ctx.SaveChanges();
+                    var gameToDel = ctx.Games.FirstOrDefault(g => g.SaveName == saveName);
+                    if (gameToDel != null) ctx.Entry((object) gameToDel).State = EntityState.Deleted;
                 }
+
+                game.SaveName = saveName;
+                game.BoardString = JsonSerializer.Serialize(game.GetBoard());
+                game.SaveCreationDateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                game.BoardWidth = game.BoardWidth;
+                game.BoardHeight = game.BoardHeight;
+                game.PlayerOneMove = game.PlayerOneMove;
+                
+                ctx.Games.Add(game);
+                ctx.SaveChanges();
+                return false;
             }
         }
 
-        public static Game GetGameFromDb(int gameId)
+        public static Game GetGameFromDb(Guid gameId)
         {
             Game game = null;
             using (var ctx = new AppDbContext())
@@ -48,7 +57,8 @@ namespace DAL
                     throw new NoNullAllowedException("No game with id '" + gameId + "' found!");
             }
             
-            game.SetBoard(JsonSerializer.Deserialize<int[][]>(game.BoardString));
+            // game.SetBoard(JsonSerializer.Deserialize<int[][]>(game.BoardString));
+            game.DeserializeBoard(game.BoardString);
             return game;
         }
     }

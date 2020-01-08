@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DAL.Migrations
 {
@@ -10,10 +11,9 @@ namespace DAL.Migrations
                 name: "Games",
                 columns: table => new
                 {
-                    GameId = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    GameId = table.Column<Guid>(nullable: false),
                     BoardString = table.Column<string>(nullable: false),
-                    SaveName = table.Column<string>(nullable: false),
+                    SaveName = table.Column<string>(nullable: true),
                     SaveCreationDateTime = table.Column<string>(nullable: false),
                     BoardHeight = table.Column<int>(nullable: false),
                     BoardWidth = table.Column<int>(nullable: false),

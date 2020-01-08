@@ -35,13 +35,11 @@
         <e p="AppDbContext.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="connectFourDb.db" t="Include" />
-        <e p="connectFourDb.db-shm" t="Include" />
-        <e p="connectFourDb.db-wal" t="Include" />
         <e p="DAL.csproj" t="IncludeRecursive" />
         <e p="GameConfigHandler.cs" t="Include" />
         <e p="Migrations" t="Include">
-          <e p="20200108122712_InitialDbCreation.cs" t="Include" />
-          <e p="20200108122712_InitialDbCreation.Designer.cs" t="Include" />
+          <e p="20200108171154_InitialDbCreation.cs" t="Include" />
+          <e p="20200108171154_InitialDbCreation.Designer.cs" t="Include" />
           <e p="AppDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -51,18 +49,6 @@
             </e>
           </e>
         </e>
-      </e>
-      <e p="Domain" t="IncludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="Domain.csproj" t="IncludeRecursive" />
-        <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
-            <e p="netcoreapp3.1" t="Include">
-              <e p="Domain.AssemblyInfo.cs" t="Include" />
-            </e>
-          </e>
-        </e>
-        <e p="SaveGame.cs" t="Include" />
       </e>
       <e p="GameEngine" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />

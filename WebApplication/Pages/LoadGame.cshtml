@@ -21,14 +21,14 @@
         @foreach(var savedGame in Model.SavedGames)
         {
             <tr style="border-bottom: 1px solid lightgray; line-height: 2">
-                <td><a class="delete_button" title="Delete saved game" asp-route-deleteGameId="@savedGame.SaveGameId">x</a></td>
+                <td><a class="delete_button" title="Delete saved game" asp-route-deleteGameId="@savedGame.GameId">x</a></td>
                 <td>
-                    @Html.DisplayFor(modelItem => savedGame.SaveGameName)
+                    @Html.DisplayFor(modelItem => savedGame.SaveName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => savedGame.SaveCreationDateTime)
                 </td>
-                <td style="display: flex; justify-content: flex-end; line-height: initial"><a class="custom_button" asp-route-gameId="@savedGame.SaveGameId" asp-page="PlayGame">Play</a></td>
+                <td style="display: flex; justify-content: flex-end; line-height: initial"><a class="custom_button" asp-route-gameId="@savedGame.GameId" asp-page="PlayGame">Play</a></td>
             </tr>
         }
         </tbody>
