@@ -61,16 +61,16 @@ namespace ConsoleUI
             return line;
         }
 
-        public static string GetSingleState(CellState state)
+        public static string GetSingleState(int state)
         {
             switch (state)
             {
-                case CellState.Empty:
+                case 0:
                     return " ";
-                case CellState.PlayerOne:
+                case 1:
                     Console.ForegroundColor = ConsoleColor.Blue;
                     return "O";
-                case CellState.PlayerTwo:
+                case 2:
                     Console.ForegroundColor = ConsoleColor.Red;
                     return "0";
                 default:

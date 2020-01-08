@@ -8,7 +8,7 @@ namespace GameEngine
 {
     public class GameConfigHandler
     {
-        public static SaveGame GetSaveGame(CellState[][] board, string saveName)
+        public static SaveGame GetSaveGame(int[][] board, string saveName)
         {
             return new SaveGame()
             {
@@ -43,7 +43,7 @@ namespace GameEngine
                 BoardHeight = height,
                 BoardWidth = width
             });
-            game.LoadGame(JsonSerializer.Deserialize<CellState[][]>(boardString));
+            game.LoadGame(JsonSerializer.Deserialize<int[][]>(boardString));
             return game;
         }
     }

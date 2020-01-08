@@ -8,19 +8,19 @@ namespace GameEngine
         /// Game logic
         /// </summary>
         
-        private CellState[][] Board { get; set; }
+        private int[][] Board { get; set; }
 
         public int BoardHeight { get; set; }
         public int BoardWidth { get; set; }
 
         public bool PlayerOneMove { get; set; }
 
-        private CellState[][] InitializeBoard(int height, int width)
+        private int[][] InitializeBoard(int height, int width)
         {
-            CellState[][] board = new CellState[height][];
+            int[][] board = new int[height][];
             for (var i = 0; i < height; i++)
             {
-                board[i] = new CellState[width];
+                board[i] = new int[width];
             }
             return board;
         }
@@ -35,14 +35,14 @@ namespace GameEngine
             Board = InitializeBoard(BoardHeight, BoardWidth);
         }
         
-        public CellState[][] GetBoard()
+        public int[][] GetBoard()
         {
             var result = InitializeBoard(BoardHeight, BoardWidth);
             Array.Copy(Board, result, Board.Length);
             return result;
         }
 
-        public void LoadGame(CellState[][] board)
+        public void LoadGame(int[][] board)
         {
             Board = board;
             BoardHeight = board.Length;
@@ -55,7 +55,7 @@ namespace GameEngine
             {
                 for (var xIndex = 0; xIndex < BoardWidth; xIndex++)
                 {
-                    if (Board[yIndex][xIndex] == CellState.Empty)
+                    if (Board[yIndex][xIndex] == 0)
                     {
                         return false;
                     }
@@ -70,7 +70,7 @@ namespace GameEngine
         {
             var posX = x - 1;
             var posY = GetLowestEmptyPos(posX);
-            Board[posY][posX] = PlayerOneMove ? CellState.PlayerOne : CellState.PlayerTwo;
+            Board[posY][posX] = PlayerOneMove ? 1 : 2;
             PlayerOneMove = !PlayerOneMove;
         }
 
@@ -78,7 +78,7 @@ namespace GameEngine
         {
             for (var i = BoardHeight-1; i > -1; i--)
             {
-                if (Board[i][posX] == CellState.Empty)
+                if (Board[i][posX] == 0)
                     return i;
             }
 
@@ -90,7 +90,7 @@ namespace GameEngine
             var posX = x - 1;
             for (var i = 0; i < BoardHeight; i++)
             {
-                if (Board[i][posX] == CellState.Empty)
+                if (Board[i][posX] == 0)
                     return false;
             }
 
