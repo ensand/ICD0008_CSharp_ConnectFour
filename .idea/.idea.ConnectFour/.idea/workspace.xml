@@ -4,27 +4,21 @@
     <list default="true" id="956d8673-d828-495a-8e2d-28ed1c1c0f47" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ConnectFour/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ConnectFour/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ConnectFour/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ConnectFour/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConnectFour.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ConnectFour.sln" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/ConsoleApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/ConsoleApplication.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/ConsoleApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/ConsoleApplication.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/GameEngine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/GameEngine.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/GameEngine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/bin/Debug/netcoreapp3.0/GameEngine.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApplication/obj/ConsoleApplication.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/obj/ConsoleApplication.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApplication/obj/ConsoleApplication.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/obj/ConsoleApplication.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/obj/Debug/netcoreapp3.0/ConsoleApplication.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/obj/Debug/netcoreapp3.0/ConsoleApplication.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/obj/Debug/netcoreapp3.0/ConsoleApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/obj/Debug/netcoreapp3.0/ConsoleApplication.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApplication/obj/Debug/netcoreapp3.0/ConsoleApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/obj/Debug/netcoreapp3.0/ConsoleApplication.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApplication/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApplication/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleUI/bin/Debug/netcoreapp3.0/GameEngine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleUI/bin/Debug/netcoreapp3.0/GameEngine.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleUI/bin/Debug/netcoreapp3.0/GameEngine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleUI/bin/Debug/netcoreapp3.0/GameEngine.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleUI/obj/ConsoleUI.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleUI/obj/ConsoleUI.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleUI/obj/ConsoleUI.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleUI/obj/ConsoleUI.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleUI/obj/Debug/netcoreapp3.0/ConsoleUI.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleUI/obj/Debug/netcoreapp3.0/ConsoleUI.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleUI/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleUI/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleUI/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleUI/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAL/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DAL/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAL/Migrations/20191106132144_InitialDbCreation.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAL/Migrations/20191106132144_InitialDbCreation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAL/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/SaveGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/SaveGame.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/GameConfigHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/GameConfigHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/bin/Debug/netcoreapp3.0/GameEngine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/bin/Debug/netcoreapp3.0/GameEngine.dll" afterDir="false" />
@@ -32,15 +26,17 @@
       <change beforePath="$PROJECT_DIR$/GameEngine/obj/Debug/netcoreapp3.0/GameEngine.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/obj/Debug/netcoreapp3.0/GameEngine.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/obj/Debug/netcoreapp3.0/GameEngine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/obj/Debug/netcoreapp3.0/GameEngine.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/obj/Debug/netcoreapp3.0/GameEngine.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/obj/Debug/netcoreapp3.0/GameEngine.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/obj/GameEngine.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/obj/GameEngine.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/obj/GameEngine.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/obj/GameEngine.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/Debug/netcoreapp3.0/MenuSystem.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/Debug/netcoreapp3.0/MenuSystem.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/MenuSystem.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/MenuSystem.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/MenuSystem.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/MenuSystem.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuSystem/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MenuSystem/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication/Pages/Error.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/Pages/Error.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication/Pages/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/Pages/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication/Pages/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/Pages/Index.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication/Pages/LoadGame.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/Pages/LoadGame.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication/Pages/LoadGame.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/Pages/LoadGame.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication/Pages/Options.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication/Pages/Options.cshtml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication/Pages/PlayGame.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/Pages/PlayGame.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication/Pages/PlayGame.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/Pages/PlayGame.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication/Pages/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/Pages/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication/WebApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/WebApplication.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,25 +51,25 @@
     <setting file="file://$PROJECT_DIR$/WebApplication/Pages/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/SaveGame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/947CFA9E-93C5-4D21-8EE6-CD975672A1F8/1E0/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/DAL/Migrations/20191106132144_InitialDbCreation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DAL/AppDbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApplication/Pages/Options.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DAL/Migrations/20200107204446_InitialDbCreation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApplication/Startup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApplication/Pages/Options.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApplication/Pages/LoadGame.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApplication/Pages/LoadGame.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain/GameState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApplication/Pages/PlayGame.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MenuSystem/MenuItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApplication/Pages/PlayGame.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GameEngine/GameSettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MenuSystem/Menu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GameEngine/GameSettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApplication/Pages/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GameEngine/CellState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/GameEngine/GameConfigHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ConsoleUI/GameUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GameEngine/GameConfigHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApplication/Pages/Index.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GameEngine/Game.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApplication/Pages/Error.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ConsoleApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApplication/Pages/Privacy.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
   </component>
@@ -95,24 +91,27 @@
         <option value="$PROJECT_DIR$/DAL/Class1.cs" />
         <option value="$PROJECT_DIR$/Domain/Class1.cs" />
         <option value="$PROJECT_DIR$/GameEngine/GameSettings.cs" />
-        <option value="$PROJECT_DIR$/GameEngine/Game.cs" />
         <option value="$PROJECT_DIR$/WebApplication/WebApplication.csproj" />
-        <option value="$PROJECT_DIR$/ConsoleApplication/Program.cs" />
         <option value="$PROJECT_DIR$/WebApplication/Pages/Privacy.cshtml" />
-        <option value="$PROJECT_DIR$/DAL/AppDbContext.cs" />
         <option value="$PROJECT_DIR$/WebApplication/wwwroot/css/site.css" />
         <option value="$PROJECT_DIR$/WebApplication/Pages/Options.cshtml.cs" />
-        <option value="$PROJECT_DIR$/WebApplication/Pages/LoadGame.cshtml.cs" />
-        <option value="$PROJECT_DIR$/WebApplication/Pages/Index.cshtml.cs" />
-        <option value="$PROJECT_DIR$/Domain/SaveGame.cs" />
         <option value="$PROJECT_DIR$/WebApplication/Startup.cs" />
-        <option value="$PROJECT_DIR$/WebApplication/Pages/PlayGame.cshtml.cs" />
-        <option value="$PROJECT_DIR$/WebApplication/Pages/LoadGame.cshtml" />
-        <option value="$PROJECT_DIR$/WebApplication/Pages/Index.cshtml" />
         <option value="$PROJECT_DIR$/WebApplication/Pages/Options.cshtml" />
         <option value="$PROJECT_DIR$/WebApplication/Pages/Shared/_Layout.cshtml" />
+        <option value="$PROJECT_DIR$/WebApplication/Pages/Error.cshtml.cs" />
+        <option value="$PROJECT_DIR$/WebApplication/Pages/Index.cshtml" />
+        <option value="$PROJECT_DIR$/WebApplication/Pages/LoadGame.cshtml.cs" />
+        <option value="$PROJECT_DIR$/WebApplication/Pages/Index.cshtml.cs" />
+        <option value="$PROJECT_DIR$/GameEngine/GameEngine.csproj" />
+        <option value="$PROJECT_DIR$/GameEngine/Game.cs" />
+        <option value="$PROJECT_DIR$/Domain/SaveGame.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApplication/Program.cs" />
+        <option value="$PROJECT_DIR$/Domain/GameState.cs" />
+        <option value="$PROJECT_DIR$/DAL/AppDbContext.cs" />
+        <option value="$PROJECT_DIR$/WebApplication/Pages/LoadGame.cshtml" />
         <option value="$PROJECT_DIR$/WebApplication/Pages/PlayGame.cshtml" />
         <option value="$PROJECT_DIR$/GameEngine/GameConfigHandler.cs" />
+        <option value="$PROJECT_DIR$/WebApplication/Pages/PlayGame.cshtml.cs" />
       </list>
     </option>
   </component>
@@ -235,7 +234,10 @@
       <workItem from="1573036812907" duration="15625000" />
       <workItem from="1573656019310" duration="30000" />
       <workItem from="1578227836692" duration="510000" />
-      <workItem from="1578310664279" duration="20753000" />
+      <workItem from="1578310664279" duration="20938000" />
+      <workItem from="1578395341192" duration="13302000" />
+      <workItem from="1578426641051" duration="4623000" />
+      <workItem from="1578479628373" duration="1116000" />
     </task>
     <servers />
   </component>
@@ -266,90 +268,94 @@
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
     <state x="759" y="323" key="EnvironmentVariablesDialog/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578338703934" />
-    <state width="2005" height="344" key="GridCell.Tab.0.bottom" timestamp="1578345124320">
+    <state width="2005" height="157" key="GridCell.Tab.0.bottom" timestamp="1578480889792">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="344" key="GridCell.Tab.0.bottom/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578345124320" />
-    <state width="2005" height="344" key="GridCell.Tab.0.center" timestamp="1578345124320">
+    <state width="2005" height="157" key="GridCell.Tab.0.bottom/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578480889792" />
+    <state width="2005" height="157" key="GridCell.Tab.0.center" timestamp="1578480889792">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="344" key="GridCell.Tab.0.center/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578345124320" />
-    <state width="2005" height="344" key="GridCell.Tab.0.left" timestamp="1578345124319">
+    <state width="2005" height="157" key="GridCell.Tab.0.center/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578480889792" />
+    <state width="2005" height="157" key="GridCell.Tab.0.left" timestamp="1578480889792">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="344" key="GridCell.Tab.0.left/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578345124319" />
-    <state width="2005" height="344" key="GridCell.Tab.0.right" timestamp="1578345124320">
+    <state width="2005" height="157" key="GridCell.Tab.0.left/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578480889792" />
+    <state width="2005" height="157" key="GridCell.Tab.0.right" timestamp="1578480889792">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="344" key="GridCell.Tab.0.right/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578345124320" />
-    <state width="2005" height="380" key="GridCell.Tab.1.bottom" timestamp="1578340719917">
+    <state width="2005" height="157" key="GridCell.Tab.0.right/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578480889792" />
+    <state width="2005" height="380" key="GridCell.Tab.1.bottom" timestamp="1578345334380">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="380" key="GridCell.Tab.1.bottom/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578340719917" />
-    <state width="2005" height="380" key="GridCell.Tab.1.center" timestamp="1578340719917">
+    <state width="2005" height="380" key="GridCell.Tab.1.bottom/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578345334380" />
+    <state width="2005" height="380" key="GridCell.Tab.1.center" timestamp="1578345334380">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="380" key="GridCell.Tab.1.center/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578340719917" />
-    <state width="2005" height="380" key="GridCell.Tab.1.left" timestamp="1578340719917">
+    <state width="2005" height="380" key="GridCell.Tab.1.center/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578345334380" />
+    <state width="2005" height="380" key="GridCell.Tab.1.left" timestamp="1578345334380">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="380" key="GridCell.Tab.1.left/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578340719917" />
-    <state width="2005" height="380" key="GridCell.Tab.1.right" timestamp="1578340719917">
+    <state width="2005" height="380" key="GridCell.Tab.1.left/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578345334380" />
+    <state width="2005" height="380" key="GridCell.Tab.1.right" timestamp="1578345334380">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="380" key="GridCell.Tab.1.right/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578340719917" />
-    <state width="2005" height="380" key="GridCell.Tab.2.bottom" timestamp="1578340719918">
+    <state width="2005" height="380" key="GridCell.Tab.1.right/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578345334380" />
+    <state width="2005" height="380" key="GridCell.Tab.2.bottom" timestamp="1578345334380">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="380" key="GridCell.Tab.2.bottom/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578340719918" />
-    <state width="2005" height="380" key="GridCell.Tab.2.center" timestamp="1578340719918">
+    <state width="2005" height="380" key="GridCell.Tab.2.bottom/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578345334380" />
+    <state width="2005" height="380" key="GridCell.Tab.2.center" timestamp="1578345334380">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="380" key="GridCell.Tab.2.center/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578340719918" />
-    <state width="2005" height="380" key="GridCell.Tab.2.left" timestamp="1578340719918">
+    <state width="2005" height="380" key="GridCell.Tab.2.center/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578345334380" />
+    <state width="2005" height="380" key="GridCell.Tab.2.left" timestamp="1578345334380">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="380" key="GridCell.Tab.2.left/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578340719918" />
-    <state width="2005" height="380" key="GridCell.Tab.2.right" timestamp="1578340719918">
+    <state width="2005" height="380" key="GridCell.Tab.2.left/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578345334380" />
+    <state width="2005" height="380" key="GridCell.Tab.2.right" timestamp="1578345334380">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="380" key="GridCell.Tab.2.right/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578340719918" />
-    <state width="2005" height="380" key="GridCell.Tab.3.bottom" timestamp="1578340719918">
+    <state width="2005" height="380" key="GridCell.Tab.2.right/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578345334380" />
+    <state width="2005" height="380" key="GridCell.Tab.3.bottom" timestamp="1578345334380">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="380" key="GridCell.Tab.3.bottom/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578340719918" />
-    <state width="2005" height="380" key="GridCell.Tab.3.center" timestamp="1578340719918">
+    <state width="2005" height="380" key="GridCell.Tab.3.bottom/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578345334380" />
+    <state width="2005" height="380" key="GridCell.Tab.3.center" timestamp="1578345334380">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="380" key="GridCell.Tab.3.center/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578340719918" />
-    <state width="2005" height="380" key="GridCell.Tab.3.left" timestamp="1578340719918">
+    <state width="2005" height="380" key="GridCell.Tab.3.center/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578345334380" />
+    <state width="2005" height="380" key="GridCell.Tab.3.left" timestamp="1578345334380">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="380" key="GridCell.Tab.3.left/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578340719918" />
-    <state width="2005" height="380" key="GridCell.Tab.3.right" timestamp="1578340719918">
+    <state width="2005" height="380" key="GridCell.Tab.3.left/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578345334380" />
+    <state width="2005" height="380" key="GridCell.Tab.3.right" timestamp="1578345334380">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="380" key="GridCell.Tab.3.right/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578340719918" />
-    <state width="2005" height="380" key="GridCell.Tab.4.bottom" timestamp="1578340719918">
+    <state width="2005" height="380" key="GridCell.Tab.3.right/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578345334380" />
+    <state width="2005" height="380" key="GridCell.Tab.4.bottom" timestamp="1578345334380">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="380" key="GridCell.Tab.4.bottom/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578340719918" />
-    <state width="2005" height="380" key="GridCell.Tab.4.center" timestamp="1578340719918">
+    <state width="2005" height="380" key="GridCell.Tab.4.bottom/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578345334380" />
+    <state width="2005" height="380" key="GridCell.Tab.4.center" timestamp="1578345334380">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="380" key="GridCell.Tab.4.center/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578340719918" />
-    <state width="2005" height="380" key="GridCell.Tab.4.left" timestamp="1578340719918">
+    <state width="2005" height="380" key="GridCell.Tab.4.center/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578345334380" />
+    <state width="2005" height="380" key="GridCell.Tab.4.left" timestamp="1578345334380">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="380" key="GridCell.Tab.4.left/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578340719918" />
-    <state width="2005" height="380" key="GridCell.Tab.4.right" timestamp="1578340719918">
+    <state width="2005" height="380" key="GridCell.Tab.4.left/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578345334380" />
+    <state width="2005" height="380" key="GridCell.Tab.4.right" timestamp="1578345334380">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="380" key="GridCell.Tab.4.right/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578340719918" />
+    <state width="2005" height="380" key="GridCell.Tab.4.right/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578345334380" />
     <state x="617" y="294" key="Rider.ProjectTemplateDialog.Size" timestamp="1578312615719">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
     <state x="617" y="294" key="Rider.ProjectTemplateDialog.Size/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578312615719" />
+    <state x="687" y="246" width="672" height="678" key="search.everywhere.popup" timestamp="1578400484955">
+      <screen x="0" y="0" width="2048" height="1122" />
+    </state>
+    <state x="687" y="246" width="672" height="678" key="search.everywhere.popup/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578400484955" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

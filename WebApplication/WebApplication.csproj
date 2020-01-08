@@ -2,6 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.0</TargetFramework>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
 
 
@@ -11,7 +12,9 @@
 
 
     <ItemGroup>
+      <ProjectReference Include="..\ConsoleUI\ConsoleUI.csproj" />
       <ProjectReference Include="..\DAL\DAL.csproj" />
+      <ProjectReference Include="..\GameEngine\GameEngine.csproj" />
     </ItemGroup>
 
 </Project>

@@ -36,8 +36,8 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="DAL.csproj" t="IncludeRecursive" />
         <e p="Migrations" t="Include">
-          <e p="20191106132144_InitialDbCreation.cs" t="Include" />
-          <e p="20191106132144_InitialDbCreation.Designer.cs" t="Include" />
+          <e p="20200107204446_InitialDbCreation.cs" t="Include" />
+          <e p="20200107204446_InitialDbCreation.Designer.cs" t="Include" />
           <e p="AppDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -51,6 +51,7 @@
       <e p="Domain" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Domain.csproj" t="IncludeRecursive" />
+        <e p="GameState.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.0" t="Include">
@@ -111,8 +112,6 @@
           <e p="Index.cshtml.cs" t="Include" />
           <e p="LoadGame.cshtml" t="Include" />
           <e p="LoadGame.cshtml.cs" t="Include" />
-          <e p="Options.cshtml" t="Include" />
-          <e p="Options.cshtml.cs" t="Include" />
           <e p="PlayGame.cshtml" t="Include" />
           <e p="PlayGame.cshtml.cs" t="Include" />
           <e p="Privacy.cshtml" t="Include" />

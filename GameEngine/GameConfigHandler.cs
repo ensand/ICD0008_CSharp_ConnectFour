@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Text;
 using System.Text.Json;
 using Domain;
@@ -13,7 +14,8 @@ namespace GameEngine
             {
                 Board = JsonSerializer.Serialize(board),
                 PlayerOneMove = false,
-                SaveGameName = saveName
+                SaveGameName = saveName,
+                SaveCreationDateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm")
             };
         }
 

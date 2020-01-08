@@ -1,7 +1,6 @@
 @page
 @model WebApplication.Pages.LoadGame
 @{
-    // Layout = null;
     ViewData["Title"] = "Load Game";
 }
 
@@ -18,26 +17,19 @@
         </tr>
         </thead>
         <tbody>
-        <tr style="border-bottom: 1px solid lightgray; line-height: 2">
-            <td class="delete_button" title="Delete saved game">x</td>
-            <td>
-                Test01
-            </td>
-            <td>
-                01.01.1999 - 00.00
-            </td>
-            <td style="display: flex; justify-content: flex-end; line-height: initial"><a class="custom_button" asp-page="PlayGame">Play</a></td>
-        </tr>
-        <tr style="border-bottom: 1px solid lightgray; line-height: 2">
-            <td class="delete_button" title="Delete saved game">x</td>
-            <td>
-                Test02
-            </td>
-            <td>
-                01.01.1999 - 00.01
-            </td>
-            <td style="display: flex; justify-content: flex-end; line-height: initial"><a class="custom_button" asp-page="PlayGame">Play</a></td>
-        </tr>
+        @foreach(var savedGame in Model.SavedGames)
+        {
+            <tr style="border-bottom: 1px solid lightgray; line-height: 2">
+                <td class="delete_button" title="Delete saved game">x</td>
+                <td>
+                    @Html.DisplayFor(modelItem => savedGame.SaveGameName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => savedGame.SaveCreationDateTime)
+                </td>
+                <td style="display: flex; justify-content: flex-end; line-height: initial"><a class="custom_button" asp-route-gameId="@savedGame.SaveGameId" asp-page="PlayGame">Play</a></td>
+            </tr>
+        }
         </tbody>
     </table>
 </div>

@@ -7,6 +7,7 @@ namespace DAL
     public class AppDbContext : DbContext // Microsoft.EntityFrameworkCore
     {
         public DbSet<SaveGame> SaveGames { get; set; }
+        public DbSet<GameState> GameStates { get; set; }
         
         public AppDbContext() { }
         public AppDbContext(DbContextOptions options) : base(options) {}

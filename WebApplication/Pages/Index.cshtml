@@ -5,15 +5,29 @@
 }
 
 <div class="main">
-    <h1 class="display-4 title" style="grid-area: 1 / 1 / 2 / 3">Connect Four</h1>
+    <h1 class="display-4 title" style="grid-area: 1 / 1 / 2 / 4">Connect Four</h1>
     <br/>
-    <div style="grid-area: 2 / 1 / 3 / 2; display: flex; flex-direction: column">
+    <form method="post" style="grid-area: 2 / 1 / 3 / 2; display: flex; flex-direction: column">
+        <input type="submit" value="New game" class="custom_button" />
         <div><input type="checkbox" checked/> Human starts</div>
-        <a asp-page="PlayGame" class="custom_button">New game</a>
-        <a asp-page="LoadGame" class="custom_button">Load game</a>
-        <a asp-page="Options" class="custom_button">Options</a>
-    </div>
-    <div style="grid-area: 2 / 2 / 3 / 3; justify-self: flex-end">
+        <table style="width: 250px; height: 90px; margin-bottom: 50px">
+            <tbody>
+            <tr>
+                <td>Board width/columns:</td>
+                <td><input asp-for="Columns" class="custom_input" type="number"/></td>
+            </tr>
+            <tr>
+                <td>Board height/rows:</td>
+                <td><input asp-for="Rows" class="custom_input" type="number"/></td>
+            </tr>
+            </tbody>
+        </table>
+        <div asp-validation-summary="All" class="text-danger"></div>
+    </form>
+    <div style="grid-area: 2 / 2 / 3 / 3; display: flex; align-items: baseline">
+        <span style="font-weight: 500; color: #2d84db; margin-right: 1rem;">OR</span> <a asp-page="LoadGame" class="custom_button">Load game</a>
+        </div>
+    <div style="grid-area: 2 / 3 / 3 / 4; justify-self: flex-end">
         <div class="image_wrapper">
             <img class="image" alt="child" src="~/img/connect-4.0.jpg"/>
         </div>

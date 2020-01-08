@@ -9,31 +9,31 @@
     <button class="custom_button">Save</button>
     <a class="custom_button" asp-page="Index">Quit</a>
     
-    <div style="display: flex; justify-content: center; align-items: center; height: 40vw;">
-        <div style="width: 70%; height: 70%; padding: 2%;">
-            <table style="height: 100%; width: 100%; overflow: hidden;">
-                <thead>
-                <tr>
-                    @for (var i = 1; i < Model.Board[0].Length + 1; i++)
-                    {
-                        <th class="board-th" style="text-align: center">@i</th>
-                    }
-                </tr>
-                </thead>
-                <tbody>
-                @foreach (var row in Model.Board)
-                {
-                    <tr>
-                        @for (var col = 0; col < row.Length; col++)
-                        {
-                            <td class="board-td">
-                                <div class="board_circle circle-@row[col]"></div>
-                            </td>
-                        }
-                    </tr>
-                }
-                </tbody>
-            </table>
+    <form method="get" style="display: flex; justify-content: center; align-items: center; height: 40vw;">
+        <div style="width: 50rem; height: 38rem; padding: 2%;">
+@*             <table style="height: 100%; width: 100%; overflow: hidden;"> *@
+@*                 <thead> *@
+@*                 <tr> *@
+@*                     @for (var i = 1; i < Model.Game.BoardWidth + 1; i++) *@
+@*                     { *@
+@*                         <th class="board-th" style="text-align: center">@i</th> *@
+@*                     } *@
+@*                 </tr> *@
+@*                 </thead> *@
+@*                 <tbody> *@
+@*                 @foreach (var row in Model.Game.GetBoard()) *@
+@*                 { *@
+@*                     <tr> *@
+@*                         @for (var col = 0; col < row.Length; col++) *@
+@*                         { *@
+@*                             <td class="board-td"> *@
+@*                                 <a asp-route-gameId="@Model.GameId" asp-route-col="@col" class="board_circle circle-@row[col]"></a> *@
+@*                             </td> *@
+@*                         } *@
+@*                     </tr> *@
+@*                 } *@
+@*                 </tbody> *@
+@*             </table> *@
         </div>
-    </div>
+    </form>
 </div>
