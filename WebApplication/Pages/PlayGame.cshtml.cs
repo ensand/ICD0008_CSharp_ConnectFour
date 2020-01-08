@@ -24,9 +24,9 @@ namespace WebApplication.Pages
             
             Game = _context.Games.Find(GameId);
             Game.DeserializeBoard(Game.BoardString);
-            if (Game == null) return RedirectToPage("Index", new {error = "game-not-found"});
+            if (Game == null) 
+                return RedirectToPage("Index", new {error = "game-not-found"});
 
-            
             if (col != null)
             {
                 int selectedCol = (int) (col + 1);
@@ -40,8 +40,11 @@ namespace WebApplication.Pages
                     _context.Games.Update(Game);
                     await _context.SaveChangesAsync();
                 }
-                
-               
+            }
+
+            if (Game.IsGameDone())
+            {
+                return RedirectToPage("Index", new {error = "you-lost-ha-ha", quitGameId = GameId});
             }
 
             return Page();

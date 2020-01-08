@@ -44,17 +44,12 @@ namespace WebApplication.Pages
             {
                 Error = error;
             }
+
+            if (quitGameId != null && Error != null && Error.Equals("you-lost-ha-ha"))
+                RemoveSave(quitGameId.Value);
             
             if (quitGameId != null)
-            {
-                var gameToDel = _context.Games.FirstOrDefault(g => g.GameId == quitGameId.Value);
-                if (gameToDel != null && gameToDel.SaveName == null)
-                {
-                    _context.Games.Attach(gameToDel);
-                    _context.Games.Remove(gameToDel);
-                    await _context.SaveChangesAsync();
-                }
-            }
+                RemoveSave(quitGameId.Value);
         }
         
         public async Task<IActionResult> OnPost(string? error)
@@ -72,6 +67,17 @@ namespace WebApplication.Pages
             await _context.SaveChangesAsync();
             
             return RedirectToPage("PlayGame", new {gameId = game.GameId});
+        }
+
+        private async void RemoveSave(Guid id)
+        {
+            var gameToDel = _context.Games.FirstOrDefault(g => g.GameId == id);
+            if (gameToDel != null && gameToDel.SaveName == null)
+            {
+                _context.Games.Attach(gameToDel);
+                _context.Games.Remove(gameToDel);
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }
