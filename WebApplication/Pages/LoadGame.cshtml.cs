@@ -35,7 +35,9 @@ namespace WebApplication.Pages
                 }
             }
 
+            // SavedGames = await _context.Games.Where(g => g.SaveName != null).ToListAsync();
             SavedGames = await _context.Games.ToListAsync();
+            
             return Page();
         }
     }

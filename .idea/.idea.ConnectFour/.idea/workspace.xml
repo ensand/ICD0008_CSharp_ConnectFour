@@ -4,19 +4,10 @@
     <list default="true" id="956d8673-d828-495a-8e2d-28ed1c1c0f47" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ConnectFour/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ConnectFour/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ConnectFour/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ConnectFour/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConnectFour.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ConnectFour.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApplication/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/GameConfigHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DAL/GameConfigHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/Migrations/20200108122712_InitialDbCreation.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/Migrations/20200108122712_InitialDbCreation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/connectFourDb.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/connectFourDb.db-shm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/connectFourDb.db-wal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAL/connectFourDb.db" beforeDir="false" afterPath="$PROJECT_DIR$/DAL/connectFourDb.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/Game.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApplication/Pages/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/Pages/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApplication/Pages/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/Pages/Index.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApplication/Pages/LoadGame.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/Pages/LoadGame.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApplication/Pages/LoadGame.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/Pages/LoadGame.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApplication/Pages/PlayGame.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/Pages/PlayGame.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApplication/Pages/PlayGame.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/Pages/PlayGame.cshtml.cs" afterDir="false" />
@@ -38,7 +29,9 @@
     <setting file="file://$PROJECT_DIR$/ConsoleUI/GameUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DAL/GameConfigHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7F296501-534F-4B05-899A-5781BC9AE559/8/Queryable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApplication/Pages/SaveGame.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/947CFA9E-93C5-4D21-8EE6-CD975672A1F8/1E0/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApplication/Pages/SaveGame.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DAL/AppDbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApplication/Startup.cs" root0="FORCE_HIGHLIGHTING" />
@@ -95,11 +88,13 @@
         <option value="$PROJECT_DIR$/ConsoleApplication/Program.cs" />
         <option value="$PROJECT_DIR$/DAL/GameConfigHandler.cs" />
         <option value="$PROJECT_DIR$/GameEngine/Game.cs" />
-        <option value="$PROJECT_DIR$/WebApplication/Pages/PlayGame.cshtml.cs" />
+        <option value="$PROJECT_DIR$/WebApplication/Pages/SaveGame.cshtml" />
         <option value="$PROJECT_DIR$/WebApplication/Pages/PlayGame.cshtml" />
-        <option value="$PROJECT_DIR$/WebApplication/Pages/Index.cshtml" />
+        <option value="$PROJECT_DIR$/WebApplication/Pages/PlayGame.cshtml.cs" />
         <option value="$PROJECT_DIR$/WebApplication/Pages/Index.cshtml.cs" />
+        <option value="$PROJECT_DIR$/WebApplication/Pages/Index.cshtml" />
         <option value="$PROJECT_DIR$/WebApplication/Pages/LoadGame.cshtml.cs" />
+        <option value="$PROJECT_DIR$/WebApplication/Pages/SaveGame.cshtml.cs" />
       </list>
     </option>
   </component>
@@ -226,7 +221,7 @@
       <workItem from="1578395341192" duration="13302000" />
       <workItem from="1578426641051" duration="4623000" />
       <workItem from="1578479628373" duration="8338000" />
-      <workItem from="1578488094825" duration="22247000" />
+      <workItem from="1578488094825" duration="30730000" />
     </task>
     <servers />
   </component>
@@ -257,22 +252,22 @@
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
     <state x="759" y="323" key="EnvironmentVariablesDialog/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578338703934" />
-    <state width="2005" height="232" key="GridCell.Tab.0.bottom" timestamp="1578511912041">
+    <state width="2005" height="238" key="GridCell.Tab.0.bottom" timestamp="1578521001091">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="232" key="GridCell.Tab.0.bottom/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578511912041" />
-    <state width="2005" height="232" key="GridCell.Tab.0.center" timestamp="1578511912040">
+    <state width="2005" height="238" key="GridCell.Tab.0.bottom/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578521001091" />
+    <state width="2005" height="238" key="GridCell.Tab.0.center" timestamp="1578521001091">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="232" key="GridCell.Tab.0.center/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578511912040" />
-    <state width="2005" height="232" key="GridCell.Tab.0.left" timestamp="1578511912040">
+    <state width="2005" height="238" key="GridCell.Tab.0.center/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578521001091" />
+    <state width="2005" height="238" key="GridCell.Tab.0.left" timestamp="1578521001091">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="232" key="GridCell.Tab.0.left/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578511912040" />
-    <state width="2005" height="232" key="GridCell.Tab.0.right" timestamp="1578511912040">
+    <state width="2005" height="238" key="GridCell.Tab.0.left/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578521001091" />
+    <state width="2005" height="238" key="GridCell.Tab.0.right" timestamp="1578521001091">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state width="2005" height="232" key="GridCell.Tab.0.right/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578511912040" />
+    <state width="2005" height="238" key="GridCell.Tab.0.right/0.0.2048.1122/-1440.532.1440.870@0.0.2048.1122" timestamp="1578521001091" />
     <state width="2005" height="380" key="GridCell.Tab.1.bottom" timestamp="1578500737187">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>

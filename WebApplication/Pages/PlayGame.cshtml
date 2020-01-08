@@ -8,8 +8,8 @@
 <div>
     <div style="display: flex; justify-content: space-between">
         <div>
-            <button class="custom_button">Save</button>
-            <a class="custom_button" asp-route-quitGameId="@Model.Game.GameId" asp-page="Index">Quit</a>
+            <a asp-page="SaveGame" asp-route-gameId="@Model.GameId" class="custom_button">Save</a>
+            <a class="custom_button" asp-route-quitGameId="@Model.GameId" asp-page="Index">Quit</a>
         </div>
         <div style="display: flex; flex-direction: column; justify-content: flex-end">
             <div style="display: flex; align-items: center; justify-content: space-between;">You are: <span class="board_circle circle-1" style="width: 2rem; height: 2rem"></span></div>

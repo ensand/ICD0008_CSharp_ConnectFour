@@ -20,6 +20,13 @@
                 <td>Board height/rows:</td>
                 <td><input asp-for="Rows" class="custom_input" type="number"/></td>
             </tr>
+            @if (Model.Error != null)
+            {
+                <tr style="background: #ffd9d6">
+                    <td>ERROR!</td>
+                    <td>@Model.Error</td>
+                </tr>
+            }
             </tbody>
         </table>
         <div asp-validation-summary="All" class="text-danger"></div>

@@ -1,0 +1,46 @@
+@page
+@model WebApplication.Pages.SaveGame
+
+@{
+    ViewData["Title"] = "Save Game";
+}
+
+<!DOCTYPE html>
+
+<div>
+    <h1 class="display-4 title">Save game</h1>
+    
+    <div style="display: flex; flex-direction: row;">
+        <form method="post" style="width: 50%; display: flex; flex-direction: column; justify-content: space-between; height: 8rem;">
+            <input asp-for="SaveName" class="custom_input" style="width: 20rem"/>
+            <div><input asp-for="Overwrite" type="checkbox"/> Overwrite</div>
+            <div>
+               <button type="submit" class="custom_button">Save</button>
+               <a asp-page="PlayGame" asp-route-gameId="@Model.GameId" class="custom_button cancel">Cancel</a> 
+            </div>
+        </form>
+        <div style="width: 50%">
+            <table style="width: 100%">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Created</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach(var savedGame in Model.SavedGames)
+                {
+                    <tr style="border-bottom: 1px solid lightgray; line-height: 2">
+                        <td>
+                            @Html.DisplayFor(modelItem => savedGame.SaveName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => savedGame.SaveCreationDateTime)
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

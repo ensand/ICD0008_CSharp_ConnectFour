@@ -1,3 +1,4 @@
+#nullable enable
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace WebApplication.Pages
         private readonly DAL.AppDbContext _context;
         public PlayGame(DAL.AppDbContext context) { _context = context; }
 
-        public Game Game { get; set; }
+        public Game Game { get; set; } = new Game();
         public Guid GameId { get; set; }
         
         public async Task<ActionResult> OnGet(Guid? gameId, int? col)
@@ -29,7 +30,6 @@ namespace WebApplication.Pages
             
             Game = _context.Games.Find(GameId);
             Game.DeserializeBoard(Game.BoardString);
-            Console.WriteLine(Game);
             if (Game == null) return RedirectToPage("Index", new {error = "game-not-found"});
 
             

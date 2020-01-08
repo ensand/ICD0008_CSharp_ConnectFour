@@ -19,10 +19,7 @@ namespace GameEngine
         public int BoardWidth { get; set; }
         public bool PlayerOneMove { get; set; }
 
-        public Game()
-        {
-            Console.WriteLine("no args constructor initialized game");
-        }
+        public Game() { }
         
         public Game(GameSettings settings)
         {
@@ -109,14 +106,6 @@ namespace GameEngine
                 board[i] = new int[width];
             }
             return board;
-        }
-
-        public override string ToString()
-        {
-            return "BoardString: " + BoardString + ", saveName: " + SaveName + ", SaveCreationDateTime: " +
-                   SaveCreationDateTime +
-                   ", Board: " + Board + ", BoardHeight: " + BoardHeight + ", BoardWidth" + BoardWidth +
-                   ", playeronemove: " + PlayerOneMove;
         }
 
         public void DeserializeBoard(string boardString)

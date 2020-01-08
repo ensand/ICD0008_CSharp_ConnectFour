@@ -36,8 +36,16 @@ namespace WebApplication.Pages
         [BindProperty]
         public bool HumanStarts { get; set; }
 
-        public async void OnGet(Guid? quitGameId)
+        public string? Error { get; set; }
+
+        public async void OnGet(Guid? quitGameId, string? error)
         {
+
+            if (error != null)
+            {
+                Error = error;
+            }
+            
             if (quitGameId != null)
             {
                 var gameToDel = _context.Games.FirstOrDefault(g => g.GameId == quitGameId.Value);
