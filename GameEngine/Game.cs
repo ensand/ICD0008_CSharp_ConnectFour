@@ -11,10 +11,10 @@ namespace GameEngine
         /// </summary>
         
         public Guid GameId { get; set; }
-        public string BoardString { get; set; }
+        public string BoardString { get; set; } = "";
         public string? SaveName { get; set; }
-        public string SaveCreationDateTime { get; set; }
-        [NotMapped] private int[][] Board { get; set; }
+        public string SaveCreationDateTime { get; set; } = "";
+        [NotMapped] private int[][] Board { get; set; } = new int[0][];
         public int BoardHeight { get; set; }
         public int BoardWidth { get; set; }
         public bool PlayerOneMove { get; set; }
@@ -23,7 +23,7 @@ namespace GameEngine
         
         public Game(GameSettings settings)
         {
-            if (settings.BoardHeight < settings.MinSize || settings.BoardWidth < settings.MinSize)
+            if (settings.BoardHeight < 4 || settings.BoardWidth < 4)
                 throw new ArgumentException("Board size has to be at least " + settings.MinSize + "x" + settings.MinSize + ".");
             
             if (settings.BoardHeight > settings.MaxSize || settings.BoardWidth > settings.MaxSize)
@@ -36,12 +36,6 @@ namespace GameEngine
             SerializeBoard(Board);
         }
 
-        public void SetBoard(int[][] board)
-        {
-            Board = board;
-            SerializeBoard(Board);
-        }
-        
         public int[][] GetBoard()
         {
             var result = InitializeBoard(BoardHeight, BoardWidth);
