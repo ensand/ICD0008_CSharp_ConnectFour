@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Threading;
 using ConsoleUI;
 using DAL;
-using Domain;
 using GameEngine;
 using MenuSystem;
 
@@ -74,7 +71,7 @@ namespace ConsoleApplication
                         "S", new MenuItem
                         {
                             Title = "Start game",
-                            CommandToExecute = gameMenu.Run
+                            CommandToExecute = RunGame
                         }
                     },
                     {
@@ -154,17 +151,17 @@ namespace ConsoleApplication
         {
             Console.Clear();
             var savedGamedDictionary = new Dictionary<int, string>();
-        
+            
             using (ctx = new AppDbContext())
             {
                 var counter = 1;
-                foreach (var saveGame in ctx.SaveGames)
+                foreach (var saveGame in ctx.Games)
                 {
-                    savedGamedDictionary.Add(counter, saveGame.SaveGameName);
+                    savedGamedDictionary.Add(counter, saveGame.SaveName);
                     counter += 1;
                 }
             }
-        
+            
             if (savedGamedDictionary.Count == 0)
             {
                 Console.WriteLine("No save files found...");
@@ -172,7 +169,7 @@ namespace ConsoleApplication
                 Thread.Sleep(3000);
                 return "";
             }
-        
+            
             Console.WriteLine("Select game by number or type \'c\' to cancel.");
             for (var i = 1; i <= savedGamedDictionary.Count; i++)
             {
@@ -183,17 +180,16 @@ namespace ConsoleApplication
             do
             {
                 var userInput = Console.ReadLine();
-                var selectedGameInt = -1;
-        
+
                 if (userInput == null || userInput.Trim().Equals("") || userInput.ToLower().Equals("c"))
                     return "";
                 
-                if (!int.TryParse(userInput, out selectedGameInt))
+                if (!int.TryParse(userInput, out var selectedGameInt))
                 {
                     Console.WriteLine($"{userInput} is not a number.");
                     continue;
                 }
-        
+            
                 if (selectedGameInt <= 0 || savedGamedDictionary.Count < selectedGameInt)
                 {
                     Console.WriteLine($"Game {selectedGameInt} does not exist.");
@@ -202,21 +198,22 @@ namespace ConsoleApplication
                 
                 using (ctx = new AppDbContext())
                 {
-                    foreach (var saveGame in ctx.SaveGames)
+                    foreach (var saveGame in ctx.Games)
                     {
-                        if (saveGame.SaveGameName.Equals(savedGamedDictionary[selectedGameInt]))
+                        if (saveGame.SaveName.Equals(savedGamedDictionary[selectedGameInt]))
                         {
-                            Game game = GameConfigHandler.LoadGameFromDb(saveGame.Board);
+                            Game game = GameConfigHandler.GetGameFromDb(saveGame.GameId);
                             StartGame(game);
                             return "";
                         }
                     }
                     return "";
                 }
-        
+            
             } while (!done);
         
             return "";
+
         }
         
         static string StartGame(Game? game)
@@ -225,135 +222,114 @@ namespace ConsoleApplication
                 game = new Game(_settings);
             
             var done = false;
-        
+            
             do
             {
                 Console.Clear();
                 GameUI.PrintBoard(game);
                 
                 var userXInt = -1;
-        
+            
                 do
                 {
                     Console.WriteLine("Give me row number, or press \'s\' to save game, or press \'q\' to leave game.");
                     Console.Write(">");
                     var userInput = Console.ReadLine();
-        
+            
                     if (userInput == null || userInput.Trim().Equals(""))
-                    {
-                        userXInt = -1;
                         continue;
-                    }
-                    
+
                     if (userInput.Trim().ToLower().Equals("q"))
                     {
-                        userXInt = 666;
-                        done = true;
+                        userXInt = -1;
+                        break;
                     }
-                    else
+
+                    if (userInput.Trim().ToLower().Equals("s"))
                     {
-                        if (userInput.Trim().ToLower().Equals("s"))
+                        var saved = false;
+                        do
                         {
-                            var saved = false;
-                            var fileName = "";
-                            do
-                            {
-                                Console.WriteLine("Enter save name or press\'c\' to cancel save");
-                                Console.Write("> ");
-                                var input = Console.ReadLine();
+                            Console.WriteLine("Enter save name or press\'c\' to cancel save");
+                            Console.Write("> ");
+                            var input = Console.ReadLine()?.Trim();
                                 
-                                if (input == null || input.Trim().Equals(""))
-                                    continue;
-        
-                                if (input.Trim().ToLower().Equals("c"))
+                            if (input == null || input.Equals(""))
+                                continue;
+            
+                            if (input.ToLower().Equals("c"))
+                                saved = true;
+
+                            else
+                            {
+                                Game existingGame;
+                                using (ctx = new AppDbContext())
                                 {
-                                    saved = true;
+                                    existingGame = ctx.Games.FirstOrDefault(g => g.SaveName.Equals(input));
                                 }
-                                else
+
+                                if (existingGame != null)
                                 {
-                                    var exists = false;
-                                    using (ctx = new AppDbContext())
+                                    Console.WriteLine("File already exists. Overwrite it? y/n");
+                                    var overwriteHandled = false;
+                                    do
                                     {
-                                        foreach (var savedGame in ctx.SaveGames)
+                                        var response = Console.ReadLine()?.Trim().ToLower();
+                                        if (response == null || response.Equals(""))
+                                            continue;
+                                                    
+                                        if (response.Equals("y") || response.Equals("yes"))
                                         {
-                                            if (savedGame.SaveGameName.Equals(input.Trim()))
-                                            {
-                                                // var existingGame = savedGame;
-                                                Console.WriteLine("File already exists!");
-                                                exists = true;
-                                                break;
-                                                // Console.WriteLine("File already exists. Overwrite it? y/n");
-                                                // var overwriteConfirmation = false;
-                                                // do
-                                                // {
-                                                //     var response = Console.ReadLine()?.Trim().ToLower();
-                                                //     if (response == null)
-                                                //         continue;
-                                                //     if (response.Equals("y") || response.Equals("yes") ||
-                                                //         response.Equals("yep") || response.Equals("yeah") ||
-                                                //         response.Equals("agreed"))
-                                                //     {
-                                                //         SaveGame overwriteGame = GameConfigHandler.GetSaveGame(game.GetBoard(), input.Trim());
-                                                //         existingGame.Board = overwriteGame.Board;
-                                                //         ctx.SaveChanges();
-                                                //         Console.WriteLine($"Saved game as \'{input}\'!");
-                                                //         saved = true;
-                                                //         overwriteConfirmation = true;
-                                                //     }
-                                                //
-                                                //     if (response.Equals("n") || response.Equals("no") ||
-                                                //         response.Equals("nope"))
-                                                //     {
-                                                //         overwriteConfirmation = true;
-                                                //     }
-                                                // } while (!overwriteConfirmation);
-                                            }
+                                            GameConfigHandler.SaveGame(game, input.Trim(), true);
+                                            Console.WriteLine($"Saved game as \'{input}\'!");
+                                            saved = true;
+                                            overwriteHandled = true;
                                         }
-                                    }
-                                    if (exists)
-                                        continue;
-        
-                                    fileName = input.Trim();
-                                    SaveGame saveGame = GameConfigHandler.GetSaveGame(game.GetBoard(), fileName);
-                                    using (ctx = new AppDbContext())
-                                    {
-                                        ctx.SaveGames.Add(saveGame);
-                                        ctx.SaveChanges();
-                                    }
+                                                
+                                        if (response.Equals("n") || response.Equals("no"))
+                                            overwriteHandled = true;
+                                                    
+                                    } while (!overwriteHandled);
+                                } else
+                                {
+                                    var fileName = input.Trim();
+                                    GameConfigHandler.SaveGame(game, fileName, false);
                                     Console.WriteLine($"Saved game as \'{input}\'!");
                                     saved = true;
                                 }
-                            } while (!saved);
-                            userXInt = -1;
-                            continue;
-                        }
-        
-                        if (!int.TryParse(userInput, out userXInt))
-                        {
-                            Console.WriteLine($"{userInput} is not a number.");
-                            userXInt = -1;
-                            continue;
-                        }
-        
-                        if (userXInt <= 0 || game.BoardWidth < userXInt)
-                        {
-                            Console.WriteLine($"Column {userXInt} does not exist.");
-                            userXInt = -1;
-                            continue;
-                        }
-        
-                        if (game.IsColumnFull(userXInt))
-                        {
-                            Console.WriteLine($"Column {userXInt} is full.");
-                            userXInt = -1;
-                        }
+                            }
+                        } while (!saved);
+                        userXInt = -1;
+                        continue;
                     }
-        
+            
+                    if (!int.TryParse(userInput, out userXInt))
+                    {
+                        Console.WriteLine($"{userInput} is not a number.");
+                        userXInt = -1;
+                        continue;
+                    }
+            
+                    if (userXInt <= 0 || game.BoardWidth < userXInt)
+                    {
+                        Console.WriteLine($"Column {userXInt} does not exist.");
+                        userXInt = -1;
+                        continue;
+                    }
+            
+                    if (game.IsColumnFull(userXInt))
+                    {
+                        Console.WriteLine($"Column {userXInt} is full.");
+                        userXInt = -1;
+                    }
+
                 } while (userXInt < 0);
+
+                if (userXInt == -1)
+                    break;
                 
-                if (userXInt != 666)
-                    game.Move(userXInt);
-        
+                game.Move(userXInt);
+            
                 if (game.IsGameDone())
                 {
                     Console.Clear();
@@ -361,7 +337,7 @@ namespace ConsoleApplication
                     Console.WriteLine("No one won!");
                     done = true;
                 }
-        
+            
             } while (!done);
             
             return "X";

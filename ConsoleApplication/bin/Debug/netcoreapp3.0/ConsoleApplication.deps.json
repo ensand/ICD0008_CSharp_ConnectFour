@@ -359,6 +359,7 @@
       "DAL/1.0.0": {
         "dependencies": {
           "Domain": "1.0.0",
+          "GameEngine": "1.0.0",
           "Microsoft.EntityFrameworkCore": "3.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "3.0.0"
         },

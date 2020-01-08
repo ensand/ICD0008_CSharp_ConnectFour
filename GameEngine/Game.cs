@@ -1,20 +1,38 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GameEngine
 {
     public class Game
     {
         /// <summary>
-        /// Game logic
+        /// Game logic and database object
         /// </summary>
         
-        private int[][] Board { get; set; }
-
+        public int GameId { get; set; }
+        public string BoardString { get; set; }
+        public string SaveName { get; set; }
+        public string SaveCreationDateTime { get; set; }
+        [NotMapped] private int[][] Board { get; set; }
         public int BoardHeight { get; set; }
         public int BoardWidth { get; set; }
-
         public bool PlayerOneMove { get; set; }
 
+        public Game() {}
+        
+        public Game(GameSettings settings)
+        {
+            if (settings.BoardHeight < settings.MinSize || settings.BoardWidth < settings.MinSize)
+                throw new ArgumentException("Board size has to be at least " + settings.MinSize + "x" + settings.MinSize + ".");
+            
+            if (settings.BoardHeight > settings.MaxSize || settings.BoardWidth > settings.MaxSize)
+                throw new ArgumentException("Board size has to be less than " + settings.MaxSize + "x" + settings.MaxSize + ".");
+            
+            BoardHeight = settings.BoardHeight;
+            BoardWidth = settings.BoardWidth;
+            Board = InitializeBoard(BoardHeight, BoardWidth);
+        }
+        
         private int[][] InitializeBoard(int height, int width)
         {
             int[][] board = new int[height][];
@@ -25,14 +43,9 @@ namespace GameEngine
             return board;
         }
 
-        public Game(GameSettings settings)
+        public void SetBoard(int[][] board)
         {
-            if (settings.BoardHeight < 4 || settings.BoardWidth < 4)
-                throw new ArgumentException("Board size has to be at least 4x4.");
-            
-            BoardHeight = settings.BoardHeight;
-            BoardWidth = settings.BoardWidth;
-            Board = InitializeBoard(BoardHeight, BoardWidth);
+            Board = board;
         }
         
         public int[][] GetBoard()
@@ -40,30 +53,6 @@ namespace GameEngine
             var result = InitializeBoard(BoardHeight, BoardWidth);
             Array.Copy(Board, result, Board.Length);
             return result;
-        }
-
-        public void LoadGame(int[][] board)
-        {
-            Board = board;
-            BoardHeight = board.Length;
-            BoardWidth = board[0].Length;
-        }
-        
-        public bool IsGameDone()
-        {
-            for (var yIndex = 0; yIndex < BoardHeight; yIndex++)
-            {
-                for (var xIndex = 0; xIndex < BoardWidth; xIndex++)
-                {
-                    if (Board[yIndex][xIndex] == 0)
-                    {
-                        return false;
-                    }
-                }
-
-            }
-
-            return true;
         }
 
         public void Move(int x)
@@ -83,6 +72,23 @@ namespace GameEngine
             }
 
             return -1;
+        }
+        
+        public bool IsGameDone()
+        {
+            for (var yIndex = 0; yIndex < BoardHeight; yIndex++)
+            {
+                for (var xIndex = 0; xIndex < BoardWidth; xIndex++)
+                {
+                    if (Board[yIndex][xIndex] == 0)
+                    {
+                        return false;
+                    }
+                }
+
+            }
+
+            return true;
         }
 
         public bool IsColumnFull(int x)

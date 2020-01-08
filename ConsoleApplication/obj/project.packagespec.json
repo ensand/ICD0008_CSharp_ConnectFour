@@ -10,13 +10,13 @@
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ],
     "originalTargetFrameworks": [
-      "netcoreapp3.0"
+      "netcoreapp3.1"
     ],
     "sources": {
       "https://api.nuget.org/v3/index.json": {}
     },
     "frameworks": {
-      "netcoreapp3.0": {
+      "netcoreapp3.1": {
         "projectReferences": {
           "C:\\Users\\Enola\\RiderProjects\\ConnectFour\\ConsoleUI\\ConsoleUI.csproj": {
             "projectPath": "C:\\Users\\Enola\\RiderProjects\\ConnectFour\\ConsoleUI\\ConsoleUI.csproj"
@@ -40,11 +40,11 @@
     }
   },
   "frameworks": {
-    "netcoreapp3.0": {
+    "netcoreapp3.1": {
       "dependencies": {
         "Microsoft.EntityFrameworkCore.Design": {
           "target": "Package",
-          "version": "[3.0.0, )"
+          "version": "[3.1.0, )"
         }
       },
       "imports": [
@@ -62,7 +62,7 @@
           "privateAssets": "all"
         }
       },
-      "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+      "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
     }
   }
 }

@@ -1,23 +1,10 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.0": {
-      "Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.0",
-        "compile": {
-          "bin/placeholder/Domain.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Domain.dll": {}
-        }
-      },
+    ".NETCoreApp,Version=v3.1": {
       "GameEngine/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v3.0",
-        "dependencies": {
-          "Domain": "1.0.0"
-        },
+        "framework": ".NETCoreApp,Version=v3.1",
         "compile": {
           "bin/placeholder/GameEngine.dll": {}
         },
@@ -28,11 +15,6 @@
     }
   },
   "libraries": {
-    "Domain/1.0.0": {
-      "type": "project",
-      "path": "../Domain/Domain.csproj",
-      "msbuildProject": "../Domain/Domain.csproj"
-    },
     "GameEngine/1.0.0": {
       "type": "project",
       "path": "../GameEngine/GameEngine.csproj",
@@ -40,7 +22,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.0": [
+    ".NETCoreApp,Version=v3.1": [
       "GameEngine >= 1.0.0"
     ]
   },
@@ -64,13 +46,13 @@
         "C:\\Users\\Enola\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "netcoreapp3.0"
+        "netcoreapp3.1"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "netcoreapp3.0": {
+        "netcoreapp3.1": {
           "projectReferences": {
             "C:\\Users\\Enola\\RiderProjects\\ConnectFour\\GameEngine\\GameEngine.csproj": {
               "projectPath": "C:\\Users\\Enola\\RiderProjects\\ConnectFour\\GameEngine\\GameEngine.csproj"
@@ -85,7 +67,7 @@
       }
     },
     "frameworks": {
-      "netcoreapp3.0": {
+      "netcoreapp3.1": {
         "imports": [
           "net461",
           "net462",
@@ -101,7 +83,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

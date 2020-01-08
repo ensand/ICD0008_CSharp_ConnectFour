@@ -7,6 +7,7 @@
 <div>
     <h1 class="display-4 title">Load game</h1>
     
+    <form method="get">
     <table style="width: 100%">
         <thead>
         <tr>
@@ -20,7 +21,7 @@
         @foreach(var savedGame in Model.SavedGames)
         {
             <tr style="border-bottom: 1px solid lightgray; line-height: 2">
-                <td class="delete_button" title="Delete saved game">x</td>
+                <td><a class="delete_button" title="Delete saved game" asp-route-deleteGameId="@savedGame.SaveGameId">x</a></td>
                 <td>
                     @Html.DisplayFor(modelItem => savedGame.SaveGameName)
                 </td>
@@ -32,4 +33,5 @@
         }
         </tbody>
     </table>
+    </form>
 </div>

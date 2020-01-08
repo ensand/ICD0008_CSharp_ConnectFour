@@ -26,7 +26,7 @@ namespace WebApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(
-                options => options.UseSqlite("Data Source=C:/Users/Enola/RiderProjects/ConnectFour/ConsoleApplication/bin/Debug/netcoreapp3.0/saves/connectFourDb.db")
+                options => options.UseSqlite("Data Source=C:/Users/Enola/RiderProjects/ConnectFour/DAL/connectFourDb.db")
             );
             services.AddRazorPages();
         }

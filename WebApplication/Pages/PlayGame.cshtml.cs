@@ -17,34 +17,45 @@ namespace WebApplication.Pages
         public PlayGame(DAL.AppDbContext context) { _context = context; }
 
         // public Game Game { get; set; } = new Game(new GameSettings());
-        // private static readonly GameSettings Settings = new GameSettings();
         public SaveGame SaveGame { get; set; }
+        public Game Game { get; set; }
+        private static readonly GameSettings Settings = new GameSettings();
         public int GameId { get; set; }
         
-        public void OnGet(int? gameId, int? col)
+        public async void OnGet(int? gameId, int? col)
         {
-            Console.WriteLine("GameId: " + gameId + ", col: " + col);
-            if (gameId != null)
-            {
-                Console.WriteLine("loaded a game");
-                GameId = gameId.Value;
-                // Game = _context.SaveGames.Find(gameId);
-            } else
-            {
-                Console.WriteLine("made new game, game id is null");
-                SaveGame = new SaveGame()
-                {
-                    
-                };
-                // _context.SaveGames.Add();
-            }
-            
+            // Console.WriteLine("GameId: " + gameId + ", col: " + col);
+            // if (gameId != null)
+            // {
+            //     Console.WriteLine("loaded a game");
+            //     GameId = gameId.Value;
+            //     SaveGame = _context.SaveGames.Find(gameId);
+            //     if (SaveGame == null)
+            //     {
+            //         Console.WriteLine("game not found. initiated a new game");
+            //         Game = new Game(Settings);
+            //     } else
+            //         Game = GameConfigHandler.LoadGameFromDb(SaveGame.Board);
+            // } else
+            // {
+            //     Console.WriteLine("made new game, game id is null");
+            //     var saveGame = new SaveGame()
+            //     {
+            //         
+            //     };
+            //     // _context.SaveGames.Add();
+            // }
+            //
             // if (col != null)
             // {
             //     Game.Move((int) col + 1);
+            //     if (SaveGame == null)
+            //         SaveGame = new SaveGame();
+            //     
+            //     SaveGame.PlayerOneMove = Game.PlayerOneMove;
+            //     SaveGame.SaveCreationDateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+            //     
             // }
-            //
-            // GameUI.PrintBoard(Game);
         }
     }
 }
